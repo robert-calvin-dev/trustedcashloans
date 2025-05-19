@@ -130,5 +130,38 @@
     <img style="width: 25%; height: auto;" src="/approved.png">
   </footer>
 
+  <script>
+    document.getElementById('loanForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+  
+      const fullName = this.querySelector('input[type="text"]').value.trim();
+      const email = this.querySelector('input[type="email"]').value.trim();
+      const phone = this.querySelector('input[type="tel"]').value.trim();
+      const amount = this.querySelector('input[type="number"]').value.trim();
+      const purpose = this.querySelector('select').value;
+  
+      if (!fullName || !email || !phone || !amount || !purpose) {
+        alert("Please fill in all fields.");
+        return;
+      }
+  
+      // Basic data splitting
+      const [firstName, ...rest] = fullName.split(" ");
+      const lastName = rest.join(" ") || "";
+  
+      // Save to localStorage
+      localStorage.setItem('loan_first_name', firstName);
+      localStorage.setItem('loan_last_name', lastName);
+      localStorage.setItem('loan_email', email);
+      localStorage.setItem('loan_phone', phone);
+      localStorage.setItem('loan_amount', amount);
+      localStorage.setItem('loan_purpose', purpose);
+  
+      // Redirect to loan selection
+      window.location.href = "/select-loan/";
+    });
+  </script>
+  
+
 </body>
 </html>

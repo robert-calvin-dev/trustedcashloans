@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Loan Type</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .hidden { display: none; }
+    .loan-box { background: #fff; padding: 30px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .loan-info { margin-top: 20px; background: #eef; padding: 15px; border-radius: 5px; }
+    label { display: block; margin-bottom: 15px; }
+    select, input[type="checkbox"] { margin-top: 5px; width: 100%; padding: 10px; }
+    button { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="loan-box">
+    <h2>Choose Your Loan Type</h2>
+    <p>Please confirm your state and select a loan type.</p>
+
+    <label>State:
+      <select id="state" required>
+        <option value="">-- Select Your State --</option>
+        <option>Ohio</option>
+        <option>Virginia</option>
+        <option>Washington</option>
+        <option>Oregon</option>
+        <option>Oklahoma</option>
+        <option>Wyoming</option>
+        <option>Maine</option>
+        <option>Rhode Island</option>
+        <option>Florida</option>
+        <option>Mississippi</option>
+        <option>Alabama</option>
+        <option>Iowa</option>
+        <option>Delaware</option>
+        <option>Wisconsin</option>
+        <option>Michigan</option>
+        <option>Indiana</option>
+        <option>North Dakota</option>
+        <option>California</option>
+        <option>Missouri</option>
+        <option>Kansas</option>
+        <option>South Carolina</option>
+        <option>Louisiana</option>
+        <option>Alaska</option>
+        <option>Tennessee</option>
+        <option>Kentucky</option>
+        <option>Texas</option>
+        <option>Utah</option>
+        <option>Nevada</option>
+        <option>Idaho</option>
+        <!-- add rest of US states here if needed -->
+      </select>
+    </label>
+
+    <label>Loan Type:
+      <select id="loanType" required>
+        <option value="">-- Choose Loan Type --</option>
+        <option value="payday">Payday Loan</option>
+        <option value="installment">Personal Installment Loan</option>
+      </select>
+    </label>
+
+    <div id="paydayInfo" class="loan-info hidden"></div>
+
+    <label id="stateAcknowledgement" class="hidden">
+      <input type="checkbox" id="stateCheck" />
+      I understand my state's Payday Loan requirements and limitations.
+    </label>
+
+    <button id="nextBtn" disabled>Next</button>
+  </div>
+
+  <script>
+    const paydayStates = {
+      "Ohio": { apr: "124%", repayment: "$659", max: "$1,000", term: "91 Days to 1 Year" },
+      "Virginia": { apr: "126%", repayment: "$638", max: "$2,500", term: "4 - 24 Months" },
+      "Washington": { apr: "126%", repayment: "$710", max: "$700", term: "7 - 45 Days" },
+      "Oregon": { apr: "140%", repayment: "$657", max: "$50,000", term: "At least 31 days" },
+      "Oklahoma": { apr: "183%", repayment: "$704", max: "$1,500", term: "2 - 12 Months" },
+      "Wyoming": { apr: "235%", repayment: "$861", max: "Not Specified", term: "Up to 1 Month" },
+      "Maine": { apr: "239%", repayment: "$700", max: "$2,000", term: "Not specified" },
+      "Rhode Island": { apr: "261%", repayment: "$860", max: "$500", term: "At least 13 days" },
+      "Florida": { apr: "281%", repayment: "$930", max: "$500", term: "7-31 Days" },
+      "Mississippi": { apr: "282%", repayment: "$824", max: "$500", term: "30 Days" },
+      "Alabama": { apr: "312%", repayment: "$1,021", max: "$500", term: "10 -31 Days" },
+      "Iowa": { apr: "322%", repayment: "$940", max: "$500", term: "Up to 31 Days" },
+      "Delaware": { apr: "334%", repayment: "$890", max: "$1,000", term: "Up to 60 Days" },
+      "Wisconsin": { apr: "338%", repayment: "$895", max: "$1,500", term: "Up to 90 Days" },
+      "Michigan": { apr: "342%", repayment: "$1,025", max: "$600", term: "Up to 31 Days" },
+      "Indiana": { apr: "349%", repayment: "$1,036", max: "$550", term: "> 14 days" },
+      "North Dakota": { apr: "354%", repayment: "$1,043", max: "$500", term: "Up to 60 Days" },
+      "California": { apr: "361%", repayment: "$860", max: "$300", term: "Up to 31 Days" },
+      "Missouri": { apr: "377%", repayment: "$945", max: "$500", term: "14 - 31 Days" },
+      "Kansas": { apr: "391%", repayment: "$1,100", max: "$500", term: "7 - 30 Days" },
+      "South Carolina": { apr: "393%", repayment: "$1,103", max: "$550", term: "Up to 31 Days" },
+      "Louisiana": { apr: "405%", repayment: "$935", max: "$350", term: "Up to 60 Days" },
+      "Alaska": { apr: "417%", repayment: "$1,140", max: "$500", term: "> 14 Days" },
+      "Tennessee": { apr: "460%", repayment: "$1,100", max: "$500", term: "Up to 31 Days" },
+      "Kentucky": { apr: "464%", repayment: "$1,212", max: "$500", term: "14 - 60 days" },
+      "Texas": { apr: "527%", repayment: "$1,145", max: "Not Specified", term: "7 - 180 days" },
+      "Utah": { apr: "554%", repayment: "$1,350", max: "No Max", term: "Up to 70 days" },
+      "Nevada": { apr: "602%", repayment: "$1,424", max: "25% of gross income", term: "Up to 35 Days" },
+      "Idaho": { apr: "652%", repayment: "$1,500", max: "$1,000", term: "Not specified" }
+    };
+
+    const stateSelect = document.getElementById('state');
+    const loanTypeSelect = document.getElementById('loanType');
+    const paydayInfo = document.getElementById('paydayInfo');
+    const stateCheck = document.getElementById('stateCheck');
+    const checkWrap = document.getElementById('stateAcknowledgement');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function updateView() {
+      const selectedState = stateSelect.value;
+      const loanType = loanTypeSelect.value;
+
+      if (loanType === "payday" && paydayStates[selectedState]) {
+        const info = paydayStates[selectedState];
+        paydayInfo.innerHTML = `
+          <strong>${selectedState} Payday Loan Info:</strong><br>
+          APR: ${info.apr}<br>
+          Avg Repayment (on $500): ${info.repayment}<br>
+          Max Loan: ${info.max}<br>
+          Loan Term: ${info.term}
+        `;
+        paydayInfo.classList.remove('hidden');
+        checkWrap.classList.remove('hidden');
+      } else if (loanType === "payday") {
+        paydayInfo.innerHTML = `<span style="color:red;">Payday Loans are not available in your state.</span>`;
+        paydayInfo.classList.remove('hidden');
+        checkWrap.classList.add('hidden');
+        nextBtn.disabled = true;
+        return;
+      } else {
+        paydayInfo.classList.add('hidden');
+        checkWrap.classList.add('hidden');
+        nextBtn.disabled = false;
+      }
+
+      if (loanType === "payday" && paydayStates[selectedState]) {
+        nextBtn.disabled = !stateCheck.checked;
+      }
+    }
+
+    stateSelect.addEventListener('change', updateView);
+    loanTypeSelect.addEventListener('change', updateView);
+    stateCheck.addEventListener('change', () => {
+      if (stateCheck.checked) nextBtn.disabled = false;
+      else nextBtn.disabled = true;
+    });
+
+    nextBtn.addEventListener('click', () => {
+      localStorage.setItem('loan_state', stateSelect.value);
+      localStorage.setItem('loan_type', loanTypeSelect.value);
+      window.location.href = "/apply/";
+    });
+  </script>
+</body>
+</html>

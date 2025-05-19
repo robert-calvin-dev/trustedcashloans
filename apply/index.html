@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loan Application – Trusted Cash Loans</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .hidden { display: none; }
+    .form-wrap { max-width: 800px; margin: 50px auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    label { display: block; margin-bottom: 15px; }
+    input, select { padding: 10px; width: 100%; margin-top: 5px; }
+    button { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="form-wrap">
+    <h2>Loan Application</h2>
+
+    <form id="phase2Form">
+      <label>Full Name
+        <input type="text" id="fullName" readonly>
+      </label>
+      <label>Email
+        <input type="email" id="email" readonly>
+      </label>
+      <label>Phone Number
+        <input type="tel" id="phone" readonly>
+      </label>
+      <label>Loan Amount Requested
+        <input type="text" id="amount" readonly>
+      </label>
+      <label>State
+        <input type="text" id="state" readonly>
+      </label>
+      <label>Loan Type
+        <input type="text" id="loanType" readonly>
+      </label>
+
+      <label>Birthdate
+        <input type="date" required>
+      </label>
+
+      <label>Current Address
+        <input type="text" placeholder="Street, City, State, Zip" required>
+      </label>
+
+      <label>
+        <input type="checkbox" id="lessThan12Months"> I have lived at this address for less than 12 months
+      </label>
+
+      <div id="previousAddressBlock" class="hidden">
+        <label>Previous Address
+          <input type="text" placeholder="Street, City, State, Zip">
+        </label>
+      </div>
+
+      <label>Employment Type
+        <select id="employmentType" required>
+          <option value="">Select</option>
+          <option>Employed Part-Time</option>
+          <option>Employed Full-Time</option>
+          <option>Student</option>
+          <option>Self-Employed</option>
+          <option>Retired</option>
+          <option>Unemployed</option>
+          <option>Social Assistance</option>
+          <option>Disability</option>
+        </select>
+      </label>
+
+      <div id="employedBlock" class="hidden">
+        <label>Employer Name <input type="text"></label>
+        <label>Employer City <input type="text"></label>
+        <label>Employed for (months) <input type="number" min="3"></label>
+        <label>Work Phone Number <input type="tel"></label>
+        <label>Pay Frequency <input type="text" placeholder="e.g., Biweekly"></label>
+        <label>Amount of Pay <input type="number"></label>
+        <label>Next Payday <input type="date"></label>
+        <label>Paid by Direct Deposit? <select><option>Yes</option><option>No</option></select></label>
+        <label>Financial Institution <input type="text"></label>
+      </div>
+
+      <div id="studentBlock" class="hidden">
+        <label>Educational Institute <input type="text"></label>
+        <label>Program of Study <input type="text"></label>
+        <label>Expected Graduation Date <input type="date"></label>
+      </div>
+
+      <div id="selfEmployedBlock" class="hidden">
+        <label>Type of Self-Employment <input type="text"></label>
+        <label>Industry <input type="text"></label>
+      </div>
+
+      <div id="altIncomeBlock" class="hidden">
+        <label>Monthly Income <input type="number"></label>
+        <label>Living Situation
+          <select>
+            <option>Rent</option>
+            <option>Own</option>
+            <option>Live with Parents</option>
+          </select>
+        </label>
+        <label>Monthly Housing Payment <input type="number"></label>
+      </div>
+
+      <label>Do you have any outstanding loans?
+        <select id="hasLoans">
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+      </label>
+
+      <div id="loanDetailsBlock" class="hidden">
+        <label>Name of Company <input type="text"></label>
+        <label>Loan Type <input type="text"></label>
+        <label>Amount Overdue <input type="number"></label>
+      </div>
+
+      <label>Looking to Borrow <input type="number" min="250" max="5000"></label>
+
+      <div id="ssnBlock" class="hidden">
+        <label>SSN (Optional for Payday Loans) <input type="text"></label>
+        <label>Confirm SSN <input type="text"></label>
+      </div>
+
+      <label>Preferred Contact Method
+        <select id="contactMethod">
+          <option>Email</option>
+          <option>Phone</option>
+        </select>
+      </label>
+
+      <div id="phoneTimeBlock" class="hidden">
+        <label>Best Time to Call
+          <select>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </label>
+      </div>
+
+      <h3>Personal References</h3>
+      <label>Reference 1 Name <input type="text"></label>
+      <label>Reference 1 Phone <input type="tel"></label>
+      <label>Reference 1 Email <input type="email"></label>
+      <label>Reference 1 Relationship <input type="text"></label>
+
+      <label>Reference 2 Name <input type="text"></label>
+      <label>Reference 2 Phone <input type="tel"></label>
+      <label>Reference 2 Email <input type="email"></label>
+      <label>Reference 2 Relationship <input type="text"></label>
+
+      <label><input type="checkbox" required> I consent to a credit check and faster approval</label>
+      <label><input type="checkbox" required> I confirm all information provided is true</label>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+
+  <script>
+   const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzaDf1OPcTz_lCjbxYH908i81LwZW1aqpj4UyxX_mPyrdD6_gGL5qsyDhsHBuovgqEAhw/exec"; // Replace with your actual URL
+ 
+   const fullNameInput = document.getElementById('fullName');
+   const emailInput = document.getElementById('email');
+   const phoneInput = document.getElementById('phone');
+   const amountInput = document.getElementById('amount');
+   const stateInput = document.getElementById('state');
+   const loanTypeInput = document.getElementById('loanType');
+ 
+   // Load from localStorage
+   const firstName = localStorage.getItem('loan_first_name') || '';
+   const lastName = localStorage.getItem('loan_last_name') || '';
+   const email = localStorage.getItem('loan_email') || '';
+   const phone = localStorage.getItem('loan_phone') || '';
+   const amount = localStorage.getItem('loan_amount') || '';
+   const state = localStorage.getItem('loan_state') || '';
+   const loanType = localStorage.getItem('loan_type') || '';
+ 
+   fullNameInput.value = `${firstName} ${lastName}`;
+   emailInput.value = email;
+   phoneInput.value = phone;
+   amountInput.value = `$${amount}`;
+   stateInput.value = state;
+   loanTypeInput.value = loanType;
+ 
+   // Payday Loan? → Show SSN
+   if (loanType === "payday") {
+     document.getElementById('ssnBlock').classList.remove('hidden');
+   }
+ 
+   // Address history toggle
+   document.getElementById('lessThan12Months').addEventListener('change', function() {
+     document.getElementById('previousAddressBlock').classList.toggle('hidden', !this.checked);
+   });
+ 
+   // Employment type logic
+   document.getElementById('employmentType').addEventListener('change', function () {
+     const type = this.value;
+     document.getElementById('employedBlock').classList.add('hidden');
+     document.getElementById('studentBlock').classList.add('hidden');
+     document.getElementById('selfEmployedBlock').classList.add('hidden');
+     document.getElementById('altIncomeBlock').classList.add('hidden');
+ 
+     if (type.includes("Employed")) {
+       document.getElementById('employedBlock').classList.remove('hidden');
+     } else if (type === "Student") {
+       document.getElementById('studentBlock').classList.remove('hidden');
+     } else if (type === "Self-Employed") {
+       document.getElementById('selfEmployedBlock').classList.remove('hidden');
+     } else {
+       document.getElementById('altIncomeBlock').classList.remove('hidden');
+     }
+   });
+ 
+   // Contact Method toggle
+   document.getElementById('contactMethod').addEventListener('change', function() {
+     document.getElementById('phoneTimeBlock').classList.toggle('hidden', this.value !== 'Phone');
+   });
+ 
+   // Loans?
+   document.getElementById('hasLoans').addEventListener('change', function() {
+     document.getElementById('loanDetailsBlock').classList.toggle('hidden', this.value !== 'Yes');
+   });
+ 
+   // Final Submit
+   document.getElementById('phase2Form').addEventListener('submit', function (e) {
+     e.preventDefault();
+ 
+     const postData = {
+       first_name: firstName,
+       last_name: lastName,
+       email: email,
+       phone: phone,
+       state: state,
+       loan_type: loanType,
+       loan_amount: amount,
+       birthdate: document.querySelector('input[type="date"]').value,
+       current_address: document.querySelector('input[placeholder*="Street"]').value,
+       lived_less_than_12_months: document.getElementById('lessThan12Months').checked ? 'Yes' : 'No',
+       previous_address: document.getElementById('previousAddressBlock').classList.contains('hidden') ? '' : document.querySelector('#previousAddressBlock input').value,
+       employment_type: document.getElementById('employmentType').value,
+       employer_name: document.querySelector('#employedBlock input:nth-of-type(1)')?.value || '',
+       employer_city: document.querySelector('#employedBlock input:nth-of-type(2)')?.value || '',
+       employment_duration: document.querySelector('#employedBlock input:nth-of-type(3)')?.value || '',
+       work_phone: document.querySelector('#employedBlock input:nth-of-type(4)')?.value || '',
+       pay_frequency: document.querySelector('#employedBlock input:nth-of-type(5)')?.value || '',
+       pay_amount: document.querySelector('#employedBlock input:nth-of-type(6)')?.value || '',
+       next_payday: document.querySelector('#employedBlock input:nth-of-type(7)')?.value || '',
+       direct_deposit: document.querySelector('#employedBlock select')?.value || '',
+       financial_institution: document.querySelector('#employedBlock input:nth-of-type(8)')?.value || '',
+       self_employment_type: document.querySelector('#selfEmployedBlock input:nth-of-type(1)')?.value || '',
+       self_employment_industry: document.querySelector('#selfEmployedBlock input:nth-of-type(2)')?.value || '',
+       educational_institute: document.querySelector('#studentBlock input:nth-of-type(1)')?.value || '',
+       program_of_study: document.querySelector('#studentBlock input:nth-of-type(2)')?.value || '',
+       expected_graduation: document.querySelector('#studentBlock input:nth-of-type(3)')?.value || '',
+       monthly_income: document.querySelector('#altIncomeBlock input:nth-of-type(1)')?.value || '',
+       living_situation: document.querySelector('#altIncomeBlock select')?.value || '',
+       monthly_housing_payment: document.querySelector('#altIncomeBlock input:nth-of-type(2)')?.value || '',
+       has_loans: document.getElementById('hasLoans').value,
+       loan_company: document.querySelector('#loanDetailsBlock input:nth-of-type(1)')?.value || '',
+       loan_type_outstanding: document.querySelector('#loanDetailsBlock input:nth-of-type(2)')?.value || '',
+       amount_overdue: document.querySelector('#loanDetailsBlock input:nth-of-type(3)')?.value || '',
+       desired_loan_amount: document.querySelector('input[type="number"][min="250"]')?.value || '',
+       ssn: document.querySelector('#ssnBlock input:nth-of-type(1)')?.value || '',
+       confirm_ssn: document.querySelector('#ssnBlock input:nth-of-type(2)')?.value || '',
+       contact_method: document.getElementById('contactMethod').value,
+       best_time_to_call: document.querySelector('#phoneTimeBlock select')?.value || '',
+       reference1_name: document.querySelectorAll('input')[document.querySelectorAll('input').length - 8].value,
+       reference1_phone: document.querySelectorAll('input')[document.querySelectorAll('input').length - 7].value,
+       reference1_email: document.querySelectorAll('input')[document.querySelectorAll('input').length - 6].value,
+       reference1_relationship: document.querySelectorAll('input')[document.querySelectorAll('input').length - 5].value,
+       reference2_name: document.querySelectorAll('input')[document.querySelectorAll('input').length - 4].value,
+       reference2_phone: document.querySelectorAll('input')[document.querySelectorAll('input').length - 3].value,
+       reference2_email: document.querySelectorAll('input')[document.querySelectorAll('input').length - 2].value,
+       reference2_relationship: document.querySelectorAll('input')[document.querySelectorAll('input').length - 1].value,
+       credit_consent: document.querySelectorAll('input[type="checkbox"]')[1].checked ? 'Yes' : 'No',
+       accuracy_consent: document.querySelectorAll('input[type="checkbox"]')[2].checked ? 'Yes' : 'No'
+     };
+ 
+     // Push to Google Sheets
+     fetch(SHEET_ENDPOINT, {
+       method: 'POST',
+       body: JSON.stringify(postData),
+       headers: {
+         'Content-Type': 'application/json'
+       }
+     });
+ 
+     // Save local completion flag
+     localStorage.setItem('loan_phase2_complete', 'yes');
+ 
+     // Redirect
+     window.location.href = "/confirmation/";
+   });
+ </script>
+ 
+ 
+</body>
+</html>
