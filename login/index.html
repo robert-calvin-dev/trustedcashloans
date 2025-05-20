@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+
+  </style>
+</head>
+<body>
+ <div id="header"></div>
+ <div style="background-color: lightsteelblue; padding: 50px;">
+
+  <h1 style="text-align: center;">Login</h1>
+<p style="text-align: center;">Enter your email to check for account access and updates.</p>
+
+<div id="login-container" style="max-width: 400px; margin: 0 auto;">
+  <form id="login-form">
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin: 10px 0;" />
+    <button type="submit" style="width: 100%; padding: 10px;">Log In</button>
+  </form>
+</div>
+
+<div id="loading-screen" style="display:none; text-align: center; margin-top: 50px;">
+  <p><strong>Welcome back, good to see you again.</strong></p>
+  <div class="spinner" style="margin: 20px auto; border: 6px solid #f3f3f3; border-top: 6px solid #555; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite;"></div>
+  <p>Check your e-mail in the next 24 hours for any possible new borrowing opportunities!</p>
+  <p>You’ll be redirected to the homepage shortly...</p>
+</div>
+
+<style>
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+  const fakeDatabase = ["user1@example.com", "jane.doe@email.com", "borrower@trusted.com"];
+
+  document.getElementById("login-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const emailInput = document.getElementById("email").value.toLowerCase();
+
+    if (fakeDatabase.includes(emailInput)) {
+      document.getElementById("login-container").style.display = "none";
+      document.getElementById("loading-screen").style.display = "block";
+
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 10000);
+    } else {
+      alert("No account found with that email. Please try again or sign up.");
+    }
+  });
+</script>
+
+
+
+
+ </div>
+ <div id="footer"></div>
+ <script src="/assets/js/script.js"></script>
+</body>
+</html>
