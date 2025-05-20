@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>You're Pre-Approved!</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
     body {
       background: #004aad;
@@ -37,6 +37,7 @@
   </style>
 </head>
 <body>
+ <div id="header"></div>
   <div class="message" id="message">
     <h1>🎉 You're Pre-Approved!</h1>
     <p id="personalMessage"></p>
@@ -44,6 +45,7 @@
     <div class="loader"></div>
     <p>Redirecting you to our homepage...</p>
   </div>
+  <div id="footer"></div>
 
   <script>
     const name = localStorage.getItem('loan_first_name') || 'There';
@@ -56,5 +58,6 @@
       window.location.href = "/";
     }, 10000); // 10 second redirect
   </script>
+  <script src="/assets/js/script.js"></script>
 </body>
 </html>

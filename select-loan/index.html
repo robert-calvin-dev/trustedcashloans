@@ -4,18 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Select Loan Type</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-    .hidden { display: none; }
-    .loan-box { background: #fff; padding: 30px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .loan-info { margin-top: 20px; background: #eef; padding: 15px; border-radius: 5px; }
-    label { display: block; margin-bottom: 15px; }
-    select, input[type="checkbox"] { margin-top: 5px; width: 100%; padding: 10px; }
-    button { margin-top: 20px; }
+
   </style>
 </head>
 <body>
-  <div class="loan-box">
+ <div id="header"></div>
+<div style="background-color: lightsteelblue; padding: 50px;">
+  <div  class="loan-box">
     <h2>Choose Your Loan Type</h2>
     <p>Please confirm your state and select a loan type.</p>
 
@@ -72,6 +69,9 @@
 
     <button id="nextBtn" disabled>Next</button>
   </div>
+</div>
+  <div id="footer"></div>
+  <script src="/assets/js/script.js"></script>
 
   <script>
     const paydayStates = {
@@ -158,5 +158,6 @@
       window.location.href = "/apply/";
     });
   </script>
+ 
 </body>
 </html>
