@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /login/
+Disallow: /confirmation/
+Disallow: /termsandconditions/
+Disallow: /privacypolicy/
+Disallow: /legalstuff/
+
+Allow: /
+
+Sitemap: https://trustedcashloans.com/sitemap.xml
