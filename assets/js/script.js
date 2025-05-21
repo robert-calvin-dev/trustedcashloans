@@ -24,7 +24,6 @@ function insertFooter() {
     <a href="/faq/">FAQ</a>
     <a href="/state-laws/">State Laws</a>
     <a href="/legalstuff/">Legal Stuff</a>
-    <a href="/sitemap.xml">Sitemap</a>
   </nav>
   <img src="/assets/images/badges.png">
 </div>
