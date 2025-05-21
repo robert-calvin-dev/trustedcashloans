@@ -66,40 +66,61 @@
     <p>Please confirm your state and select a loan type.</p>
 
     <label>State:
-      <select id="state" required>
-        <option value="">-- Select Your State --</option>
-        <option>Ohio</option>
-        <option>Virginia</option>
-        <option>Washington</option>
-        <option>Oregon</option>
-        <option>Oklahoma</option>
-        <option>Wyoming</option>
-        <option>Maine</option>
-        <option>Rhode Island</option>
-        <option>Florida</option>
-        <option>Mississippi</option>
-        <option>Alabama</option>
-        <option>Iowa</option>
-        <option>Delaware</option>
-        <option>Wisconsin</option>
-        <option>Michigan</option>
-        <option>Indiana</option>
-        <option>North Dakota</option>
-        <option>California</option>
-        <option>Missouri</option>
-        <option>Kansas</option>
-        <option>South Carolina</option>
-        <option>Louisiana</option>
-        <option>Alaska</option>
-        <option>Tennessee</option>
-        <option>Kentucky</option>
-        <option>Texas</option>
-        <option>Utah</option>
-        <option>Nevada</option>
-        <option>Idaho</option>
-        <!-- add rest of US states here if needed -->
-      </select>
-    </label>
+     <select id="state" required>
+       <option value="">-- Select Your State --</option>
+       <option>Alabama</option>
+       <option>Alaska</option>
+       <option>Arizona</option>
+       <option>Arkansas</option>
+       <option>California</option>
+       <option>Colorado</option>
+       <option>Connecticut</option>
+       <option>Delaware</option>
+       <option>Florida</option>
+       <option>Georgia</option>
+       <option>Hawaii</option>
+       <option>Idaho</option>
+       <option>Illinois</option>
+       <option>Indiana</option>
+       <option>Iowa</option>
+       <option>Kansas</option>
+       <option>Kentucky</option>
+       <option>Louisiana</option>
+       <option>Maine</option>
+       <option>Maryland</option>
+       <option>Massachusetts</option>
+       <option>Michigan</option>
+       <option>Minnesota</option>
+       <option>Mississippi</option>
+       <option>Missouri</option>
+       <option>Montana</option>
+       <option>Nebraska</option>
+       <option>Nevada</option>
+       <option>New Hampshire</option>
+       <option>New Jersey</option>
+       <option>New Mexico</option>
+       <option>New York</option>
+       <option>North Carolina</option>
+       <option>North Dakota</option>
+       <option>Ohio</option>
+       <option>Oklahoma</option>
+       <option>Oregon</option>
+       <option>Pennsylvania</option>
+       <option>Rhode Island</option>
+       <option>South Carolina</option>
+       <option>South Dakota</option>
+       <option>Tennessee</option>
+       <option>Texas</option>
+       <option>Utah</option>
+       <option>Vermont</option>
+       <option>Virginia</option>
+       <option>Washington</option>
+       <option>West Virginia</option>
+       <option>Wisconsin</option>
+       <option>Wyoming</option>
+     </select>
+   </label>
+   
 
     <label>Loan Type:
       <select id="loanType" required>
@@ -180,36 +201,34 @@
     const nextBtn = document.getElementById('nextBtn');
 
     function updateView() {
-      const selectedState = stateSelect.value;
-      const loanType = loanTypeSelect.value;
+  const selectedState = stateSelect.value;
+  const loanType = loanTypeSelect.value;
 
-      if (loanType === "payday" && paydayStates[selectedState]) {
-        const info = paydayStates[selectedState];
-        paydayInfo.innerHTML = `
-          <strong>${selectedState} Payday Loan Info:</strong><br>
-          APR: ${info.apr}<br>
-          Avg Repayment (on $500): ${info.repayment}<br>
-          Max Loan: ${info.max}<br>
-          Loan Term: ${info.term}
-        `;
-        paydayInfo.classList.remove('hidden');
-        checkWrap.classList.remove('hidden');
-      } else if (loanType === "payday") {
-        paydayInfo.innerHTML = `<span style="color:red;">Payday Loans are not available in your state.</span>`;
-        paydayInfo.classList.remove('hidden');
-        checkWrap.classList.add('hidden');
-        nextBtn.disabled = true;
-        return;
-      } else {
-        paydayInfo.classList.add('hidden');
-        checkWrap.classList.add('hidden');
-        nextBtn.disabled = false;
-      }
-
-      if (loanType === "payday" && paydayStates[selectedState]) {
-        nextBtn.disabled = !stateCheck.checked;
-      }
+  if (loanType === "payday") {
+    if (paydayStates[selectedState]) {
+      const info = paydayStates[selectedState];
+      paydayInfo.innerHTML = `
+        <strong>${selectedState} Payday Loan Info:</strong><br>
+        APR: ${info.apr}<br>
+        Avg Repayment (on $500): ${info.repayment}<br>
+        Max Loan: ${info.max}<br>
+        Loan Term: ${info.term}
+      `;
+      paydayInfo.classList.remove('hidden');
+      checkWrap.classList.remove('hidden');
+      nextBtn.disabled = !stateCheck.checked;
+    } else {
+      paydayInfo.innerHTML = `<span style="color:red;">Payday Loans are not available in your state.<br>Only Personal Installment Loans may be available.</span>`;
+      paydayInfo.classList.remove('hidden');
+      checkWrap.classList.add('hidden');
+      nextBtn.disabled = true;
     }
+  } else {
+    paydayInfo.classList.add('hidden');
+    checkWrap.classList.add('hidden');
+    nextBtn.disabled = false;
+  }
+}
 
     stateSelect.addEventListener('change', updateView);
     loanTypeSelect.addEventListener('change', updateView);
