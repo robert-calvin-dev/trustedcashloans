@@ -254,7 +254,7 @@
   stateInput.value = state;
   loanTypeInput.value = loanType;
 
-  // Show SSN for payday
+  // Show SSN block for payday loans
   if (loanType === "payday") {
     document.getElementById('ssnBlock').classList.remove('hidden');
   }
@@ -283,41 +283,41 @@
     }
   });
 
-  // Contact method logic
+  // Contact method toggle
   document.getElementById('contactMethod').addEventListener('change', function () {
     document.getElementById('phoneTimeBlock').classList.toggle('hidden', this.value !== 'Phone');
   });
 
-  // Loans logic
+  // Loan history toggle
   document.getElementById('hasLoans').addEventListener('change', function () {
     document.getElementById('loanDetailsBlock').classList.toggle('hidden', this.value !== 'Yes');
   });
 
-  // Final submit
+  // Submit handler
   document.getElementById('phase2Form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const formData = new FormData(this);
-    const data = {
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      phone: phone,
-      loan_amount: amount,
-      loan_purpose: localStorage.getItem('loan_purpose') || '',
-      state: state,
-      loan_type: loanType
-    };
+    const formData = new FormData();
+    formData.append('first_name', firstName);
+    formData.append('last_name', lastName);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('loan_amount', amount);
+    formData.append('loan_purpose', localStorage.getItem('loan_purpose') || '');
+    formData.append('state', state);
+    formData.append('loan_type', loanType);
 
-    formData.forEach((value, key) => {
-      data[key] = value;
+    // Include all inputs/selects/textareas in the live form
+    this.querySelectorAll('input, select, textarea').forEach(input => {
+      if (input.name && !formData.has(input.name)) {
+        formData.append(input.name, input.value);
+      }
     });
 
     try {
       const res = await fetch('https://hooks.zapier.com/hooks/catch/23008356/2778bib/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: formData
       });
 
       if (res.ok) {
@@ -332,6 +332,7 @@
     }
   });
 </script>
+
 
  <script src="/assets/js/script.js"></script>
  
