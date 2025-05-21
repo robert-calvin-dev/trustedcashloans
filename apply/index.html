@@ -70,6 +70,9 @@
     <h2>Loan Application</h2>
 
     <form id="phase2Form">
+
+     <fieldset style="margin-top:20px;">
+      <legend><strong>General</strong></legend>
       <label>Full Name
         <input type="text" id="fullName" readonly>
       </label>
@@ -93,19 +96,93 @@
         <input type="date" required>
       </label>
 
-      <label>Current Address
-        <input type="text" placeholder="Street, City, State, Zip" required>
-      </label>
+      <label>Preferred Contact Method
+       <select id="contactMethod">
+         <option>Email</option>
+         <option>Phone</option>
+       </select>
+     </label>
 
-      <label>
-        <input type="checkbox" id="lessThan12Months"> I have lived at this address for less than 12 months
+     <div id="phoneTimeBlock" class="hidden">
+       <label>Best Time to Call
+         <select>
+           <option>Morning</option>
+           <option>Afternoon</option>
+           <option>Evening</option>
+         </select>
+       </label>
+     </div>
+
+     </fieldset>
+
+      <fieldset style="margin-top:20px;">
+       <legend><strong>Current Address</strong></legend>
+     
+       <label>Suite / Apt # (optional)
+         <input type="text" name="address_suite" placeholder="e.g., Apt 4B">
+       </label>
+     
+       <label>Street Number
+         <input type="text" name="address_street_number" placeholder="e.g., 123" required>
+       </label>
+     
+       <label>Street Name
+         <input type="text" name="address_street_name" placeholder="e.g., Main St" required>
+       </label>
+     
+       <label>City
+         <input type="text" name="address_city" required>
+       </label>
+     
+       <label>ZIP Code
+         <input type="text" name="address_zip" pattern="^\d{5}(-\d{4})?$" placeholder="e.g., 90210" required>
+       </label>
+       <label style="display: flex; align-items: center; gap: 8px;">
+        <input type="checkbox" id="lessThan12Months">
+        I have lived at this address for less than 12 months
       </label>
+      
+     </fieldset>
+
+
 
       <div id="previousAddressBlock" class="hidden">
-        <label>Previous Address
-          <input type="text" placeholder="Street, City, State, Zip">
+       <fieldset style="margin-top:20px;">
+        <legend><strong>Previous Address</strong></legend>
+      
+        <label>Suite / Apt # (optional)
+          <input type="text" name="address_suite" placeholder="e.g., Apt 4B">
         </label>
+      
+        <label>Street Number
+          <input type="text" name="address_street_number" placeholder="e.g., 123" required>
+        </label>
+      
+        <label>Street Name
+          <input type="text" name="address_street_name" placeholder="e.g., Main St" required>
+        </label>
+      
+        <label>City
+          <input type="text" name="address_city" required>
+        </label>
+      
+        <label>ZIP Code
+          <input type="text" name="address_zip" pattern="^\d{5}(-\d{4})?$" placeholder="e.g., 90210" required>
+        </label>
+      </fieldset>
       </div>
+
+      <fieldset style="margin-top:20px;">
+       <legend><strong>Employment and Income</strong></legend>
+
+      <label>Living Situation
+       <select>
+         <option>Rent</option>
+         <option>Own</option>
+         <option>Live with Parents</option>
+       </select>
+     </label>
+     <label>Monthly Housing Payment <input type="number"></label>
 
       <label>Employment Type
         <select id="employmentType" required>
@@ -131,6 +208,8 @@
         <label>Next Payday <input type="date"></label>
         <label>Paid by Direct Deposit? <select><option>Yes</option><option>No</option></select></label>
         <label>Financial Institution <input type="text"></label>
+        <label>Monthly Income <input type="number"></label>
+
       </div>
 
       <div id="studentBlock" class="hidden">
@@ -145,15 +224,7 @@
       </div>
 
       <div id="altIncomeBlock" class="hidden">
-        <label>Monthly Income <input type="number"></label>
-        <label>Living Situation
-          <select>
-            <option>Rent</option>
-            <option>Own</option>
-            <option>Live with Parents</option>
-          </select>
-        </label>
-        <label>Monthly Housing Payment <input type="number"></label>
+
       </div>
 
       <label>Do you have any outstanding loans?
@@ -169,31 +240,21 @@
         <label>Amount Overdue <input type="number"></label>
       </div>
 
-      <label>Looking to Borrow <input type="number" min="250" max="5000"></label>
+      </fieldset>
+
+      <fieldset style="margin-top:20px;">
+       <legend><strong>SSN</strong></legend>
 
       <div id="ssnBlock" class="hidden">
         <label>SSN (Optional for Payday Loans) <input type="text"></label>
         <label>Confirm SSN <input type="text"></label>
       </div>
 
-      <label>Preferred Contact Method
-        <select id="contactMethod">
-          <option>Email</option>
-          <option>Phone</option>
-        </select>
-      </label>
+      </fieldset>
 
-      <div id="phoneTimeBlock" class="hidden">
-        <label>Best Time to Call
-          <select>
-            <option>Morning</option>
-            <option>Afternoon</option>
-            <option>Evening</option>
-          </select>
-        </label>
-      </div>
+      <fieldset style="margin-top:20px;">
+       <legend><strong>Personal References</strong></legend>
 
-      <h3>Personal References</h3>
       <label>Reference 1 Name <input type="text"></label>
       <label>Reference 1 Phone <input type="tel"></label>
       <label>Reference 1 Email <input type="email"></label>
@@ -203,9 +264,14 @@
       <label>Reference 2 Phone <input type="tel"></label>
       <label>Reference 2 Email <input type="email"></label>
       <label>Reference 2 Relationship <input type="text"></label>
+      </fieldset>
 
-      <label><input type="checkbox" required> I consent to a credit check and faster approval</label>
-      <label><input type="checkbox" required> I confirm all information provided is true</label>
+      <fieldset style="margin-top:20px;">
+       <legend><strong>Consent</strong></legend>
+
+      <label><input type="checkbox" required> I hereby consent to Trusted Cash Loans obtaining a credit report from any credit reporting agency and contacting my current or previous employers/landlords for the purpose of assessing my creditworthiness and financial standing. I understand that this information may be used to make decisions related to my application for Trusted Cash Loans and may also be shared with other parties as required by law or to comply with regulatory requirements. I further acknowledge that I have the right to withdraw this consent at any time by providing written notice to Trusted Cash Loans. However, if I withdraw consent, I may not be able to obtain the Trusted Cash Loans.</label>
+      <label><input type="checkbox" required> I hereby declare that all the above information is correct and accurate. I solemnly declare that all the information furnished in this document is free of errors to the best of my knowledge.</label>
+      </fieldset>
 
       <button type="submit">Submit Application</button>
     </form>
