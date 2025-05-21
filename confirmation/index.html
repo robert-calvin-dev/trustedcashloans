@@ -56,34 +56,64 @@
 
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-    body {
-      background: #004aad;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-    .loader {
-      border: 8px solid #f3f3f3;
-      border-top: 8px solid #faf200;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-      margin: 30px auto;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .message {
-      font-size: 1.8rem;
-      max-width: 500px;
-    }
+body {
+  
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.message {
+ background: #004aad;
+  max-width: 90%;
+  padding: 20px;
+  font-size: 1.4rem;
+  box-sizing: border-box;
+}
+
+.message h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #faf200;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 30px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .message {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+
+  .message h1 {
+    font-size: 1.6rem;
+  }
+
+  .loader {
+    width: 50px;
+    height: 50px;
+    border-width: 6px;
+  }
+}
   </style>
 </head>
 <body>
@@ -91,11 +121,11 @@
   <div class="message" id="message">
     <h1>🎉 You're Pre-Approved!</h1>
     <p id="personalMessage"></p>
-    <p>Please check your email for details. A loan specialist will contact you via your preferred method within 24 hours.</p>
+    <p>Please check your email for details. <br>A loan specialist will contact you via your preferred method within 24 hours.</p>
     <div class="loader"></div>
     <p>Redirecting you to our homepage...</p>
   </div>
-  <div id="footer"></div>
+
   <div style="display:none;">
    <h2>Your Loan Application Has Been Received</h2>
    <p>Thank you for applying with Trusted Cash Loans. We’ve successfully received your application and are already reviewing your information to find a lending partner that fits your needs. Whether you're looking for emergency funds, payday relief, or a personal loan solution, our system is working fast to match you with the best available option.</p>
@@ -120,7 +150,7 @@
     const type = localStorage.getItem('loan_type') || 'your loan';
 
     document.getElementById('personalMessage').textContent =
-      `Congratulations, ${name}. We’ve matched you with lenders for ${type === 'payday' ? 'a Payday Loan' : 'a Personal Installment Loan'}.`;
+      `Congratulations! We’ve matched you with lenders for ${type === 'payday' ? 'a Payday Loan' : 'a Personal Installment Loan'}.`;
 
     setTimeout(() => {
       window.location.href = "/";

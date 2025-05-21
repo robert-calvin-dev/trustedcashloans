@@ -241,9 +241,9 @@ button {
 
 @media  (max-width: 768px) {
 
-  .form-wrap {
-    padding: 15px;
-  }
+form {
+  width: 95%;
+}
 
   fieldset {
     padding: 8px;
