@@ -93,11 +93,11 @@
       </label>
 
       <label>Birthdate
-        <input type="date" required>
+        <input name="birthdate" type="date" required>
       </label>
 
       <label>Preferred Contact Method
-       <select id="contactMethod">
+       <select name="preferred_contact_method" id="contactMethod">
          <option>Email</option>
          <option>Phone</option>
        </select>
@@ -105,7 +105,7 @@
 
      <div id="phoneTimeBlock" class="hidden">
        <label>Best Time to Call
-         <select>
+         <select name="best_time_to_call">
            <option>Morning</option>
            <option>Afternoon</option>
            <option>Evening</option>
@@ -138,7 +138,7 @@
          <input type="text" name="address_zip" pattern="^\d{5}(-\d{4})?$" placeholder="e.g., 90210" required>
        </label>
        <label style="display: flex; align-items: center; gap: 8px;">
-        <input type="checkbox" id="lessThan12Months">
+        <input name="lived_there_less_than_12_months" type="checkbox" id="lessThan12Months">
         I have lived at this address for less than 12 months
       </label>
       
@@ -151,23 +151,23 @@
         <legend><strong>Previous Address</strong></legend>
       
         <label>Suite / Apt # (optional)
-          <input type="text" name="address_suite" placeholder="e.g., Apt 4B">
+          <input type="text" name="prev_address_suite" placeholder="e.g., Apt 4B">
         </label>
       
         <label>Street Number
-          <input type="text" name="address_street_number" placeholder="e.g., 123" required>
+          <input type="text" name="prev_address_street_number" placeholder="e.g., 123" required>
         </label>
       
         <label>Street Name
-          <input type="text" name="address_street_name" placeholder="e.g., Main St" required>
+          <input type="text" name="prev_address_street_name" placeholder="e.g., Main St" required>
         </label>
       
         <label>City
-          <input type="text" name="address_city" required>
+          <input type="text" name="prev_address_city" required>
         </label>
       
         <label>ZIP Code
-          <input type="text" name="address_zip" pattern="^\d{5}(-\d{4})?$" placeholder="e.g., 90210" required>
+          <input type="text" name="prev_address_zip" pattern="^\d{5}(-\d{4})?$" placeholder="e.g., 90210" required>
         </label>
       </fieldset>
       </div>
@@ -176,16 +176,16 @@
        <legend><strong>Employment and Income</strong></legend>
 
       <label>Living Situation
-       <select>
+       <select name="living_situation">
          <option>Rent</option>
          <option>Own</option>
          <option>Live with Parents</option>
        </select>
      </label>
-     <label>Monthly Housing Payment <input type="number"></label>
+     <label>Monthly Housing Payment <input name="monthly_living_cost" type="number"></label>
 
       <label>Employment Type
-        <select id="employmentType" required>
+        <select name="employment_type" id="employmentType" required>
           <option value="">Select</option>
           <option>Employed Part-Time</option>
           <option>Employed Full-Time</option>
@@ -199,28 +199,29 @@
       </label>
 
       <div id="employedBlock" class="hidden">
-        <label>Employer Name <input type="text"></label>
-        <label>Employer City <input type="text"></label>
-        <label>Employed for (months) <input type="number" min="3"></label>
-        <label>Work Phone Number <input type="tel"></label>
-        <label>Pay Frequency <input type="text" placeholder="e.g., Biweekly"></label>
-        <label>Amount of Pay <input type="number"></label>
-        <label>Next Payday <input type="date"></label>
-        <label>Paid by Direct Deposit? <select><option>Yes</option><option>No</option></select></label>
-        <label>Financial Institution <input type="text"></label>
-        <label>Monthly Income <input type="number"></label>
+        <label>Employer Name <input name="employer" type="text"></label>
+        <label>Employer City <input name="employer_city" type="text"></label>
+        <label>Employed for (months) <input name="months_employed" type="number" min="3"></label>
+        <label>Work Phone Number <input name="employer_phone" type="tel"></label>
+        <label>Ext <input name="extension" type="text"> </label>
+        <label>Pay Frequency <input name="pay_frequency" type="text" placeholder="e.g., Biweekly"></label>
+        <label>Net Pay <input name="net_pay" type="number"></label>
+        <label>Next Payday <input name="next_payday" type="date"></label>
+        <label>Paid by Direct Deposit? <select name="direct_deposit"><option>Yes</option><option>No</option></select></label>
+        <label>Financial Institution <input name="bank_name" type="text"></label>
+        <label>Monthly Income <input name="total_monthly_income" type="number"></label>
 
       </div>
 
       <div id="studentBlock" class="hidden">
-        <label>Educational Institute <input type="text"></label>
-        <label>Program of Study <input type="text"></label>
-        <label>Expected Graduation Date <input type="date"></label>
+        <label>Educational Institute <input name="school_name" type="text"></label>
+        <label>Program of Study <input name="program_study" type="text"></label>
+        <label>Expected Graduation Date <input name="graduation_date" type="date"></label>
       </div>
 
       <div id="selfEmployedBlock" class="hidden">
-        <label>Type of Self-Employment <input type="text"></label>
-        <label>Industry <input type="text"></label>
+        <label>Type of Self-Employment <input name="self_employment" type="text"></label>
+        <label>Industry <input name="industry" type="text"></label>
       </div>
 
       <div id="altIncomeBlock" class="hidden">
@@ -228,16 +229,16 @@
       </div>
 
       <label>Do you have any outstanding loans?
-        <select id="hasLoans">
+        <select name="outstanding_loans" id="hasLoans">
           <option>No</option>
           <option>Yes</option>
         </select>
       </label>
 
       <div id="loanDetailsBlock" class="hidden">
-        <label>Name of Company <input type="text"></label>
-        <label>Loan Type <input type="text"></label>
-        <label>Amount Overdue <input type="number"></label>
+        <label>Name of Company <input name="loan_company" type="text"></label>
+        <label>Loan Type <input name="loan_type" type="text"></label>
+        <label>Amount Overdue <input name="overdue_amount" type="number"></label>
       </div>
 
       </fieldset>
@@ -246,8 +247,8 @@
        <legend><strong>SSN</strong></legend>
 
       <div id="ssnBlock">
-        <label>SSN (Optional for Payday Loans) <input type="text"></label>
-        <label>Confirm SSN <input type="text"></label>
+        <label>SSN (Optional for Payday Loans) <input name="SSN" type="text"></label>
+        <label>Confirm SSN <input name="SSN_confirmation" type="text"></label>
       </div>
 
       </fieldset>
@@ -255,22 +256,22 @@
       <fieldset style="margin-top:20px;">
        <legend><strong>Personal References</strong></legend>
 
-      <label>Reference 1 Name <input type="text"></label>
-      <label>Reference 1 Phone <input type="tel"></label>
-      <label>Reference 1 Email <input type="email"></label>
-      <label>Reference 1 Relationship <input type="text"></label>
+      <label>Reference 1 Name <input name="first_reference" type="text"></label>
+      <label>Reference 1 Phone <input name="first_reference_phone" type="tel"></label>
+      <label>Reference 1 Email <input name="first_reference_email" type="email"></label>
+      <label>Reference 1 Relationship <input name="first_reference_relationship" type="text"></label>
 
-      <label>Reference 2 Name <input type="text"></label>
-      <label>Reference 2 Phone <input type="tel"></label>
-      <label>Reference 2 Email <input type="email"></label>
-      <label>Reference 2 Relationship <input type="text"></label>
+      <label>Reference 2 Name <input name="second_reference" type="text"></label>
+      <label>Reference 2 Phone <input name="second_reference_phone" type="tel"></label>
+      <label>Reference 2 Email <input name="second_reference_email" type="email"></label>
+      <label>Reference 2 Relationship <input name="second_reference_relationship" type="text"></label>
       </fieldset>
 
       <fieldset style="margin-top:20px;">
        <legend><strong>Consent</strong></legend>
 
-      <label><input type="checkbox" required> I hereby consent to Trusted Cash Loans obtaining a credit report from any credit reporting agency and contacting my current or previous employers/landlords for the purpose of assessing my creditworthiness and financial standing. I understand that this information may be used to make decisions related to my application for Trusted Cash Loans and may also be shared with other parties as required by law or to comply with regulatory requirements. I further acknowledge that I have the right to withdraw this consent at any time by providing written notice to Trusted Cash Loans. However, if I withdraw consent, I may not be able to obtain the Trusted Cash Loans.</label>
-      <label><input type="checkbox" required> I hereby declare that all the above information is correct and accurate. I solemnly declare that all the information furnished in this document is free of errors to the best of my knowledge.</label>
+      <label><input name="credit_check_consent" type="checkbox" required> I hereby consent to Trusted Cash Loans obtaining a credit report from any credit reporting agency and contacting my current or previous employers/landlords for the purpose of assessing my creditworthiness and financial standing. I understand that this information may be used to make decisions related to my application for Trusted Cash Loans and may also be shared with other parties as required by law or to comply with regulatory requirements. I further acknowledge that I have the right to withdraw this consent at any time by providing written notice to Trusted Cash Loans. However, if I withdraw consent, I may not be able to obtain the Trusted Cash Loans.</label>
+      <label><input name="truthful_confirmation" type="checkbox" required> I hereby declare that all the above information is correct and accurate. I solemnly declare that all the information furnished in this document is free of errors to the best of my knowledge.</label>
       </fieldset>
 
       <button type="submit">Submit Application</button>
