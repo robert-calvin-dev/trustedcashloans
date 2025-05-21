@@ -114,12 +114,12 @@
         <a href="https://trustedcashloans.ca/"><img src="assets/images/canada.png" alt="Canada Flag"></a>
       </div>
       <h2 style="color:orange;">Apply Now</h2>
-      <label>Full Name <input type="text" required></label>
-      <label>Email <input type="email" required></label>
-      <label>Phone Number <input type="tel" required></label>
-      <label>How much are you looking to borrow? <input type="number" min="250" max="5000" required></label>
+      <label>Full Name <input type="text" name="full_name" required></label>
+      <label>Email <input type="email" name="email" required></label>
+      <label>Phone Number <input type="tel" name="phone" placerholder="Optional"></label>
+      <label>How much are you looking to borrow? <input type="number" name="amount" min="250" max="5000" required></label>
       <label>Purpose of Loan
-        <select required>
+        <select name="purpose" required>
           <option value="">Select</option>
           <option>Cash Until Payday</option>
           <option>Emergency Expense</option>
@@ -130,71 +130,66 @@
       <button type="submit">Submit Application</button>
     </form>
     
-  </div>
-
-  </div>
-  </div>
-
-  <div class="container-two">
-
-    <img class="img-solutions" src="assets/images//logo-finding-solutions.png">
-
-  
-  <section class="loan-types">
-    <img src="assets/images/loan-type-graph.png" alt="Loan Type Chart" class="loan-chart">
-  </section>
-
-<h2 style="text-align:center;">Why Our Customers<br> Love Us</h2>
-
-  <section class="testimonials">
-    <img src="assets/images/dean-review.png" alt="Dean Testimonial">
-    <img src="assets/images/reba-review.png" alt="Reba Testimonial">
-    <img src="assets/images/patrick-review.png" alt="Patrick Testimonial">
-  </section>
-
-  
-  </div>
-
-  <div id="footer"></div>
-  <div style="display:none;">
-    <h2>Trusted Cash Loans – Survival-Based Lending with Zero Fluff</h2>
-    <p>Trusted Cash Loans is your rapid-response financial partner when real life happens. From emergency payday loans to flexible personal installment options, we’re here to help you find money fast—without shame, confusion, or false promises. Whether you're behind on bills, hit with a surprise expense, or just trying to keep your head above water, we make the process simple, secure, and judgment-free.</p>
+    </div>
     
-    <ul>
-      <li>Emergency payday loans with fast approval</li>
-      <li>Flexible personal installment loan options</li>
-      <li>Short-term financial help with no fluff</li>
-      <li>Loan access for people with bad or no credit</li>
-      <li>Cash advance solutions for working Americans</li>
-      <li>Online payday loans with instant decision</li>
-      <li>Financial help for rent, bills, car repairs</li>
-      <li>Loan applications with no fax and minimal paperwork</li>
-      <li>Trusted payday loan site with real support</li>
-      <li>Alternative lending options for urgent needs</li>
-    </ul>
-  </div>
-
-
-
-  <script>
-    document.getElementById('loanForm').addEventListener('submit', function(e) {
+    </div>
+    </div>
+    
+    <div class="container-two">
+    
+      <img class="img-solutions" src="assets/images//logo-finding-solutions.png">
+    
+    <section class="loan-types">
+      <img src="assets/images/loan-type-graph.png" alt="Loan Type Chart" class="loan-chart">
+    </section>
+    
+    <h2 style="text-align:center;">Why Our Customers<br> Love Us</h2>
+    
+    <section class="testimonials">
+      <img src="assets/images/dean-review.png" alt="Dean Testimonial">
+      <img src="assets/images/reba-review.png" alt="Reba Testimonial">
+      <img src="assets/images/patrick-review.png" alt="Patrick Testimonial">
+    </section>
+    
+    </div>
+    
+    <div id="footer"></div>
+    <div style="display:none;">
+      <h2>Trusted Cash Loans – Survival-Based Lending with Zero Fluff</h2>
+      <p>Trusted Cash Loans is your rapid-response financial partner when real life happens. From emergency payday loans to flexible personal installment options, we’re here to help you find money fast—without shame, confusion, or false promises. Whether you're behind on bills, hit with a surprise expense, or just trying to keep your head above water, we make the process simple, secure, and judgment-free.</p>
+      
+      <ul>
+        <li>Emergency payday loans with fast approval</li>
+        <li>Flexible personal installment loan options</li>
+        <li>Short-term financial help with no fluff</li>
+        <li>Loan access for people with bad or no credit</li>
+        <li>Cash advance solutions for working Americans</li>
+        <li>Online payday loans with instant decision</li>
+        <li>Financial help for rent, bills, car repairs</li>
+        <li>Loan applications with no fax and minimal paperwork</li>
+        <li>Trusted payday loan site with real support</li>
+        <li>Alternative lending options for urgent needs</li>
+      </ul>
+    </div>
+    
+    <script>
+    document.getElementById('loanForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-  
-      const fullName = this.querySelector('input[type="text"]').value.trim();
-      const email = this.querySelector('input[type="email"]').value.trim();
-      const phone = this.querySelector('input[type="tel"]').value.trim();
-      const amount = this.querySelector('input[type="number"]').value.trim();
-      const purpose = this.querySelector('select').value;
-  
+    
+      const fullName = this.querySelector('input[name="full_name"]').value.trim();
+      const email = this.querySelector('input[name="email"]').value.trim();
+      const phone = this.querySelector('input[name="phone"]').value.trim();
+      const amount = this.querySelector('input[name="amount"]').value.trim();
+      const purpose = this.querySelector('select[name="purpose"]').value;
+    
       if (!fullName || !email || !phone || !amount || !purpose) {
         alert("Please fill in all fields.");
         return;
       }
-  
-      // Basic data splitting
+    
       const [firstName, ...rest] = fullName.split(" ");
       const lastName = rest.join(" ") || "";
-  
+    
       // Save to localStorage
       localStorage.setItem('loan_first_name', firstName);
       localStorage.setItem('loan_last_name', lastName);
@@ -202,14 +197,30 @@
       localStorage.setItem('loan_phone', phone);
       localStorage.setItem('loan_amount', amount);
       localStorage.setItem('loan_purpose', purpose);
-  
-      // Redirect to loan selection
+    
+      // Send to webhook
+      const formData = new FormData();
+      formData.append('first_name', firstName);
+      formData.append('last_name', lastName);
+      formData.append('email', email);
+      formData.append('phone', phone);
+      formData.append('loan_amount', amount);
+      formData.append('loan_purpose', purpose);
+    
+      try {
+        const res = await fetch('https://hooks.zapier.com/hooks/catch/23008356/2jy7rv8/', {
+          method: 'POST',
+          body: formData
+        });
+      } catch (err) {
+        console.error("Webhook error:", err);
+      }
+    
+      // Redirect after submission
       window.location.href = "/select-loan/";
     });
-  </script>
-  <script src="/assets/js/script.js"></script>
-
-</body>
-</html>
-
-
+    </script>
+    <script src="/assets/js/script.js"></script>
+    
+    </body>
+    </html>
