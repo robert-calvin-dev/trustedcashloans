@@ -245,7 +245,7 @@
       <fieldset style="margin-top:20px;">
        <legend><strong>SSN</strong></legend>
 
-      <div id="ssnBlock" class="hidden">
+      <div id="ssnBlock">
         <label>SSN (Optional for Payday Loans) <input type="text"></label>
         <label>Confirm SSN <input type="text"></label>
       </div>
@@ -320,10 +320,7 @@
   stateInput.value = state;
   loanTypeInput.value = loanType;
 
-  // Show SSN block for payday loans
-  if (loanType === "payday") {
-    document.getElementById('ssnBlock').classList.remove('hidden');
-  }
+
 
   // Address toggle
   document.getElementById('lessThan12Months').addEventListener('change', function () {
@@ -363,6 +360,56 @@
   document.getElementById('phase2Form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
+    // CLEAR PREVIOUS ERROR STATES
+    this.querySelectorAll('input, select').forEach(field => field.style.borderColor = '');
+
+    // === BASIC CLIENT-SIDE VALIDATION ===
+    let isValid = true;
+    let firstInvalid = null;
+
+    this.querySelectorAll('input, select').forEach(field => {
+      const visible = field.offsetParent !== null;
+
+      if (!visible || field.type === 'hidden' || field.readOnly) return;
+
+      const isCheckbox = field.type === 'checkbox';
+      const isEmpty = isCheckbox ? !field.checked : !field.value.trim();
+
+      if (field.hasAttribute('required') && isEmpty) {
+        isValid = false;
+        field.style.borderColor = 'red';
+        if (!firstInvalid) firstInvalid = field;
+      }
+
+      // Email format
+      if (field.type === 'email' && field.value && !field.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        isValid = false;
+        field.style.borderColor = 'red';
+        if (!firstInvalid) firstInvalid = field;
+      }
+
+      // ZIP Code
+      if (field.name === 'address_zip' && field.value && !field.value.match(/^\d{5}(-\d{4})?$/)) {
+        isValid = false;
+        field.style.borderColor = 'red';
+        if (!firstInvalid) firstInvalid = field;
+      }
+
+      // Phone number (basic US format)
+      if (field.type === 'tel' && field.value && !field.value.match(/^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/)) {
+        isValid = false;
+        field.style.borderColor = 'red';
+        if (!firstInvalid) firstInvalid = field;
+      }
+    });
+
+    if (!isValid) {
+      alert('Please complete all required fields correctly.');
+      firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // === FORM IS VALID — CONTINUE WITH ZAPIER SUBMIT ===
     const formData = new FormData();
     formData.append('first_name', firstName);
     formData.append('last_name', lastName);
@@ -373,7 +420,6 @@
     formData.append('state', state);
     formData.append('loan_type', loanType);
 
-    // Include all inputs/selects/textareas in the live form
     this.querySelectorAll('input, select, textarea').forEach(input => {
       if (input.name && !formData.has(input.name)) {
         formData.append(input.name, input.value);
