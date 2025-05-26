@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Virginia</h1>
-    <ul>
+    <h1>Loans in Virginia</h1>
+    <ul class="citylist">
       <li><a href='/virginia/virginia-beach/' onclick="localStorage.setItem('city', 'Virginia Beach')">Virginia Beach</a></li>
 <li><a href='/virginia/norfolk/' onclick="localStorage.setItem('city', 'Norfolk')">Norfolk</a></li>
 <li><a href='/virginia/chesapeake/' onclick="localStorage.setItem('city', 'Chesapeake')">Chesapeake</a></li>
 <li><a href='/virginia/richmond/' onclick="localStorage.setItem('city', 'Richmond')">Richmond</a></li>
 <li><a href='/virginia/newport-news/' onclick="localStorage.setItem('city', 'Newport News')">Newport News</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Rhode Island</h1>
-    <ul>
+    <h1>Loans in Rhode Island</h1>
+    <ul class="citylist">
       <li><a href='/rhode-island/providence/' onclick="localStorage.setItem('city', 'Providence')">Providence</a></li>
 <li><a href='/rhode-island/cranston/' onclick="localStorage.setItem('city', 'Cranston')">Cranston</a></li>
 <li><a href='/rhode-island/warwick/' onclick="localStorage.setItem('city', 'Warwick')">Warwick</a></li>
 <li><a href='/rhode-island/pawtucket/' onclick="localStorage.setItem('city', 'Pawtucket')">Pawtucket</a></li>
 <li><a href='/rhode-island/east-providence/' onclick="localStorage.setItem('city', 'East Providence')">East Providence</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

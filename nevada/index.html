@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Nevada</h1>
-    <ul>
+    <h1>Loans in Nevada</h1>
+    <ul class="citylist">
       <li><a href='/nevada/las-vegas/' onclick="localStorage.setItem('city', 'Las Vegas')">Las Vegas</a></li>
 <li><a href='/nevada/henderson/' onclick="localStorage.setItem('city', 'Henderson')">Henderson</a></li>
 <li><a href='/nevada/reno/' onclick="localStorage.setItem('city', 'Reno')">Reno</a></li>
 <li><a href='/nevada/north-las-vegas/' onclick="localStorage.setItem('city', 'North Las Vegas')">North Las Vegas</a></li>
 <li><a href='/nevada/sparks/' onclick="localStorage.setItem('city', 'Sparks')">Sparks</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

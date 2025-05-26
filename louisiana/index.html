@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Louisiana</h1>
-    <ul>
+    <h1>Loans in Louisiana</h1>
+    <ul class="citylist">
       <li><a href='/louisiana/new-orleans/' onclick="localStorage.setItem('city', 'New Orleans')">New Orleans</a></li>
 <li><a href='/louisiana/baton-rouge/' onclick="localStorage.setItem('city', 'Baton Rouge')">Baton Rouge</a></li>
 <li><a href='/louisiana/shreveport/' onclick="localStorage.setItem('city', 'Shreveport')">Shreveport</a></li>
 <li><a href='/louisiana/lafayette/' onclick="localStorage.setItem('city', 'Lafayette')">Lafayette</a></li>
 <li><a href='/louisiana/lake-charles/' onclick="localStorage.setItem('city', 'Lake Charles')">Lake Charles</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

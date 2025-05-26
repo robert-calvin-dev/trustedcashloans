@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in New Mexico</h1>
-    <ul>
+    <h1>Loans in New Mexico</h1>
+    <ul class="citylist">
       <li><a href='/new-mexico/albuquerque/' onclick="localStorage.setItem('city', 'Albuquerque')">Albuquerque</a></li>
 <li><a href='/new-mexico/las-cruces/' onclick="localStorage.setItem('city', 'Las Cruces')">Las Cruces</a></li>
 <li><a href='/new-mexico/rio-rancho/' onclick="localStorage.setItem('city', 'Rio Rancho')">Rio Rancho</a></li>
 <li><a href='/new-mexico/santa-fe/' onclick="localStorage.setItem('city', 'Santa Fe')">Santa Fe</a></li>
 <li><a href='/new-mexico/roswell/' onclick="localStorage.setItem('city', 'Roswell')">Roswell</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

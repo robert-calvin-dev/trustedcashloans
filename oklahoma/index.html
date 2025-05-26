@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Oklahoma</h1>
-    <ul>
+    <h1>Loans in Oklahoma</h1>
+    <ul class="citylist">
       <li><a href='/oklahoma/oklahoma-city/' onclick="localStorage.setItem('city', 'Oklahoma City')">Oklahoma City</a></li>
 <li><a href='/oklahoma/tulsa/' onclick="localStorage.setItem('city', 'Tulsa')">Tulsa</a></li>
 <li><a href='/oklahoma/norman/' onclick="localStorage.setItem('city', 'Norman')">Norman</a></li>
 <li><a href='/oklahoma/broken-arrow/' onclick="localStorage.setItem('city', 'Broken Arrow')">Broken Arrow</a></li>
 <li><a href='/oklahoma/edmond/' onclick="localStorage.setItem('city', 'Edmond')">Edmond</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

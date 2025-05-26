@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Nebraska</h1>
-    <ul>
+    <h1>Loans in Nebraska</h1>
+    <ul class="citylist">
       <li><a href='/nebraska/omaha/' onclick="localStorage.setItem('city', 'Omaha')">Omaha</a></li>
 <li><a href='/nebraska/lincoln/' onclick="localStorage.setItem('city', 'Lincoln')">Lincoln</a></li>
 <li><a href='/nebraska/bellevue/' onclick="localStorage.setItem('city', 'Bellevue')">Bellevue</a></li>
 <li><a href='/nebraska/grand-island/' onclick="localStorage.setItem('city', 'Grand Island')">Grand Island</a></li>
 <li><a href='/nebraska/kearney/' onclick="localStorage.setItem('city', 'Kearney')">Kearney</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

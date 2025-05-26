@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Connecticut</h1>
-    <ul>
+    <h1>Loans in Connecticut</h1>
+    <ul class="citylist">
       <li><a href='/connecticut/bridgeport/' onclick="localStorage.setItem('city', 'Bridgeport')">Bridgeport</a></li>
 <li><a href='/connecticut/new-haven/' onclick="localStorage.setItem('city', 'New Haven')">New Haven</a></li>
 <li><a href='/connecticut/stamford/' onclick="localStorage.setItem('city', 'Stamford')">Stamford</a></li>
 <li><a href='/connecticut/hartford/' onclick="localStorage.setItem('city', 'Hartford')">Hartford</a></li>
 <li><a href='/connecticut/waterbury/' onclick="localStorage.setItem('city', 'Waterbury')">Waterbury</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in New York</h1>
-    <ul>
+    <h1>Loans in New York</h1>
+    <ul class="citylist">
       <li><a href='/new-york/new-york-city/' onclick="localStorage.setItem('city', 'New York City')">New York City</a></li>
 <li><a href='/new-york/buffalo/' onclick="localStorage.setItem('city', 'Buffalo')">Buffalo</a></li>
 <li><a href='/new-york/rochester/' onclick="localStorage.setItem('city', 'Rochester')">Rochester</a></li>
 <li><a href='/new-york/yonkers/' onclick="localStorage.setItem('city', 'Yonkers')">Yonkers</a></li>
 <li><a href='/new-york/syracuse/' onclick="localStorage.setItem('city', 'Syracuse')">Syracuse</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

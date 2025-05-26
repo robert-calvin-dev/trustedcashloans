@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Massachusetts</h1>
-    <ul>
+    <h1>Loans in Massachusetts</h1>
+    <ul class="citylist">
       <li><a href='/massachusetts/boston/' onclick="localStorage.setItem('city', 'Boston')">Boston</a></li>
 <li><a href='/massachusetts/worcester/' onclick="localStorage.setItem('city', 'Worcester')">Worcester</a></li>
 <li><a href='/massachusetts/springfield/' onclick="localStorage.setItem('city', 'Springfield')">Springfield</a></li>
 <li><a href='/massachusetts/lowell/' onclick="localStorage.setItem('city', 'Lowell')">Lowell</a></li>
 <li><a href='/massachusetts/cambridge/' onclick="localStorage.setItem('city', 'Cambridge')">Cambridge</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

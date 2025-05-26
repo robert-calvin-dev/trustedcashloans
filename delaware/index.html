@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Delaware</h1>
-    <ul>
+    <h1>Loans in Delaware</h1>
+    <ul class="citylist">
       <li><a href='/delaware/wilmington/' onclick="localStorage.setItem('city', 'Wilmington')">Wilmington</a></li>
 <li><a href='/delaware/dover/' onclick="localStorage.setItem('city', 'Dover')">Dover</a></li>
 <li><a href='/delaware/newark/' onclick="localStorage.setItem('city', 'Newark')">Newark</a></li>
 <li><a href='/delaware/middletown/' onclick="localStorage.setItem('city', 'Middletown')">Middletown</a></li>
 <li><a href='/delaware/smyrna/' onclick="localStorage.setItem('city', 'Smyrna')">Smyrna</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

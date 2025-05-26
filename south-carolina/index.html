@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in South Carolina</h1>
-    <ul>
+    <h1>Loans in South Carolina</h1>
+    <ul class="citylist">
       <li><a href='/south-carolina/charleston/' onclick="localStorage.setItem('city', 'Charleston')">Charleston</a></li>
 <li><a href='/south-carolina/columbia/' onclick="localStorage.setItem('city', 'Columbia')">Columbia</a></li>
 <li><a href='/south-carolina/north-charleston/' onclick="localStorage.setItem('city', 'North Charleston')">North Charleston</a></li>
 <li><a href='/south-carolina/mount-pleasant/' onclick="localStorage.setItem('city', 'Mount Pleasant')">Mount Pleasant</a></li>
 <li><a href='/south-carolina/rock-hill/' onclick="localStorage.setItem('city', 'Rock Hill')">Rock Hill</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

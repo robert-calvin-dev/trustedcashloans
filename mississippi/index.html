@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Mississippi</h1>
-    <ul>
+    <h1>Loans in Mississippi</h1>
+    <ul class="citylist">
       <li><a href='/mississippi/jackson/' onclick="localStorage.setItem('city', 'Jackson')">Jackson</a></li>
 <li><a href='/mississippi/gulfport/' onclick="localStorage.setItem('city', 'Gulfport')">Gulfport</a></li>
 <li><a href='/mississippi/southaven/' onclick="localStorage.setItem('city', 'Southaven')">Southaven</a></li>
 <li><a href='/mississippi/hattiesburg/' onclick="localStorage.setItem('city', 'Hattiesburg')">Hattiesburg</a></li>
 <li><a href='/mississippi/biloxi/' onclick="localStorage.setItem('city', 'Biloxi')">Biloxi</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

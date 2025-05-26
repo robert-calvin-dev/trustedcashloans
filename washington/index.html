@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Washington</h1>
-    <ul>
+    <h1>Loans in Washington</h1>
+    <ul class="citylist">
       <li><a href='/washington/seattle/' onclick="localStorage.setItem('city', 'Seattle')">Seattle</a></li>
 <li><a href='/washington/spokane/' onclick="localStorage.setItem('city', 'Spokane')">Spokane</a></li>
 <li><a href='/washington/tacoma/' onclick="localStorage.setItem('city', 'Tacoma')">Tacoma</a></li>
 <li><a href='/washington/vancouver/' onclick="localStorage.setItem('city', 'Vancouver')">Vancouver</a></li>
 <li><a href='/washington/bellevue/' onclick="localStorage.setItem('city', 'Bellevue')">Bellevue</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

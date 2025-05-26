@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Iowa</h1>
-    <ul>
+    <h1>Loans in Iowa</h1>
+    <ul class="citylist">
       <li><a href='/iowa/des-moines/' onclick="localStorage.setItem('city', 'Des Moines')">Des Moines</a></li>
 <li><a href='/iowa/cedar-rapids/' onclick="localStorage.setItem('city', 'Cedar Rapids')">Cedar Rapids</a></li>
 <li><a href='/iowa/davenport/' onclick="localStorage.setItem('city', 'Davenport')">Davenport</a></li>
 <li><a href='/iowa/sioux-city/' onclick="localStorage.setItem('city', 'Sioux City')">Sioux City</a></li>
 <li><a href='/iowa/iowa-city/' onclick="localStorage.setItem('city', 'Iowa City')">Iowa City</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

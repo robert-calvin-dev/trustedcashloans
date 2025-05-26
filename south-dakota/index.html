@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in South Dakota</h1>
-    <ul>
+    <h1>Loans in South Dakota</h1>
+    <ul class="citylist">
       <li><a href='/south-dakota/sioux-falls/' onclick="localStorage.setItem('city', 'Sioux Falls')">Sioux Falls</a></li>
 <li><a href='/south-dakota/rapid-city/' onclick="localStorage.setItem('city', 'Rapid City')">Rapid City</a></li>
 <li><a href='/south-dakota/aberdeen/' onclick="localStorage.setItem('city', 'Aberdeen')">Aberdeen</a></li>
 <li><a href='/south-dakota/brookings/' onclick="localStorage.setItem('city', 'Brookings')">Brookings</a></li>
 <li><a href='/south-dakota/watertown/' onclick="localStorage.setItem('city', 'Watertown')">Watertown</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

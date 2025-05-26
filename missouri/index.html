@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Missouri</h1>
-    <ul>
+    <h1>Loans in Missouri</h1>
+    <ul class="citylist">
       <li><a href='/missouri/kansas-city/' onclick="localStorage.setItem('city', 'Kansas City')">Kansas City</a></li>
 <li><a href='/missouri/st-louis/' onclick="localStorage.setItem('city', 'St. Louis')">St. Louis</a></li>
 <li><a href='/missouri/springfield/' onclick="localStorage.setItem('city', 'Springfield')">Springfield</a></li>
 <li><a href='/missouri/columbia/' onclick="localStorage.setItem('city', 'Columbia')">Columbia</a></li>
 <li><a href='/missouri/independence/' onclick="localStorage.setItem('city', 'Independence')">Independence</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

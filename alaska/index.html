@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Alaska</h1>
-    <ul>
+    <h1>Loans in Alaska</h1>
+    <ul class="citylist">
       <li><a href='/alaska/anchorage/' onclick="localStorage.setItem('city', 'Anchorage')">Anchorage</a></li>
 <li><a href='/alaska/fairbanks/' onclick="localStorage.setItem('city', 'Fairbanks')">Fairbanks</a></li>
 <li><a href='/alaska/juneau/' onclick="localStorage.setItem('city', 'Juneau')">Juneau</a></li>
 <li><a href='/alaska/wasilla/' onclick="localStorage.setItem('city', 'Wasilla')">Wasilla</a></li>
 <li><a href='/alaska/sitka/' onclick="localStorage.setItem('city', 'Sitka')">Sitka</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

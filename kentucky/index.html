@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Kentucky</h1>
-    <ul>
+    <h1>Loans in Kentucky</h1>
+    <ul class="citylist">
       <li><a href='/kentucky/louisville/' onclick="localStorage.setItem('city', 'Louisville')">Louisville</a></li>
 <li><a href='/kentucky/lexington/' onclick="localStorage.setItem('city', 'Lexington')">Lexington</a></li>
 <li><a href='/kentucky/bowling-rgb(4, 0, 128)/' onclick="localStorage.setItem('city', 'Bowling rgb(4, 0, 128)')">Bowling rgb(4, 0, 128)</a></li>
 <li><a href='/kentucky/owensboro/' onclick="localStorage.setItem('city', 'Owensboro')">Owensboro</a></li>
 <li><a href='/kentucky/covington/' onclick="localStorage.setItem('city', 'Covington')">Covington</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

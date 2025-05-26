@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Ohio</h1>
-    <ul>
+    <h1>Loans in Ohio</h1>
+    <ul class="citylist">
       <li><a href='/ohio/columbus/' onclick="localStorage.setItem('city', 'Columbus')">Columbus</a></li>
 <li><a href='/ohio/cleveland/' onclick="localStorage.setItem('city', 'Cleveland')">Cleveland</a></li>
 <li><a href='/ohio/cincinnati/' onclick="localStorage.setItem('city', 'Cincinnati')">Cincinnati</a></li>
 <li><a href='/ohio/toledo/' onclick="localStorage.setItem('city', 'Toledo')">Toledo</a></li>
 <li><a href='/ohio/akron/' onclick="localStorage.setItem('city', 'Akron')">Akron</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

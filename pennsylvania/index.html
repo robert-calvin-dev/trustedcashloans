@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Pennsylvania</h1>
-    <ul>
+    <h1>Loans in Pennsylvania</h1>
+    <ul class="citylist">
       <li><a href='/pennsylvania/philadelphia/' onclick="localStorage.setItem('city', 'Philadelphia')">Philadelphia</a></li>
 <li><a href='/pennsylvania/pittsburgh/' onclick="localStorage.setItem('city', 'Pittsburgh')">Pittsburgh</a></li>
 <li><a href='/pennsylvania/allentown/' onclick="localStorage.setItem('city', 'Allentown')">Allentown</a></li>
 <li><a href='/pennsylvania/erie/' onclick="localStorage.setItem('city', 'Erie')">Erie</a></li>
 <li><a href='/pennsylvania/reading/' onclick="localStorage.setItem('city', 'Reading')">Reading</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

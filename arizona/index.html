@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Arizona</h1>
-    <ul>
+    <h1>Loans in Arizona</h1>
+    <ul class="citylist">
       <li><a href='/arizona/phoenix/' onclick="localStorage.setItem('city', 'Phoenix')">Phoenix</a></li>
 <li><a href='/arizona/tucson/' onclick="localStorage.setItem('city', 'Tucson')">Tucson</a></li>
 <li><a href='/arizona/mesa/' onclick="localStorage.setItem('city', 'Mesa')">Mesa</a></li>
 <li><a href='/arizona/chandler/' onclick="localStorage.setItem('city', 'Chandler')">Chandler</a></li>
 <li><a href='/arizona/scottsdale/' onclick="localStorage.setItem('city', 'Scottsdale')">Scottsdale</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

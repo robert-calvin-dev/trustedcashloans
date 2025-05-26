@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -110,17 +116,17 @@
 </head>
 <body>
   <div id="header"></div>
-  <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Arkansas</h1>
-    <ul>
+  <div style="background-color: rgb(255, 255, 255); padding: 50px;">
+    <h1>Loans in Arkansas</h1>
+    <ul class="citylist">
       <li><a href='/arkansas/little-rock/' onclick="localStorage.setItem('city', 'Little Rock')">Little Rock</a></li>
 <li><a href='/arkansas/fort-smith/' onclick="localStorage.setItem('city', 'Fort Smith')">Fort Smith</a></li>
 <li><a href='/arkansas/fayetteville/' onclick="localStorage.setItem('city', 'Fayetteville')">Fayetteville</a></li>
 <li><a href='/arkansas/springdale/' onclick="localStorage.setItem('city', 'Springdale')">Springdale</a></li>
 <li><a href='/arkansas/jonesboro/' onclick="localStorage.setItem('city', 'Jonesboro')">Jonesboro</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

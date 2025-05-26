@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Kansas</h1>
-    <ul>
+    <h1>Loans in Kansas</h1>
+    <ul class="citylist">
       <li><a href='/kansas/wichita/' onclick="localStorage.setItem('city', 'Wichita')">Wichita</a></li>
 <li><a href='/kansas/overland-park/' onclick="localStorage.setItem('city', 'Overland Park')">Overland Park</a></li>
 <li><a href='/kansas/kansas-city/' onclick="localStorage.setItem('city', 'Kansas City')">Kansas City</a></li>
 <li><a href='/kansas/topeka/' onclick="localStorage.setItem('city', 'Topeka')">Topeka</a></li>
 <li><a href='/kansas/olathe/' onclick="localStorage.setItem('city', 'Olathe')">Olathe</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

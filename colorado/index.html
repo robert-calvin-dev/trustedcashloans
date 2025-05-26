@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Colorado</h1>
-    <ul>
+    <h1>Loans in Colorado</h1>
+    <ul class="citylist">
       <li><a href='/colorado/denver/' onclick="localStorage.setItem('city', 'Denver')">Denver</a></li>
 <li><a href='/colorado/colorado-springs/' onclick="localStorage.setItem('city', 'Colorado Springs')">Colorado Springs</a></li>
 <li><a href='/colorado/aurora/' onclick="localStorage.setItem('city', 'Aurora')">Aurora</a></li>
 <li><a href='/colorado/fort-collins/' onclick="localStorage.setItem('city', 'Fort Collins')">Fort Collins</a></li>
 <li><a href='/colorado/lakewood/' onclick="localStorage.setItem('city', 'Lakewood')">Lakewood</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

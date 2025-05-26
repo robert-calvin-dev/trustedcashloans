@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Maryland</h1>
-    <ul>
+    <h1>Loans in Maryland</h1>
+    <ul class="citylist">
       <li><a href='/maryland/baltimore/' onclick="localStorage.setItem('city', 'Baltimore')">Baltimore</a></li>
 <li><a href='/maryland/frederick/' onclick="localStorage.setItem('city', 'Frederick')">Frederick</a></li>
 <li><a href='/maryland/rockville/' onclick="localStorage.setItem('city', 'Rockville')">Rockville</a></li>
 <li><a href='/maryland/gaithersburg/' onclick="localStorage.setItem('city', 'Gaithersburg')">Gaithersburg</a></li>
 <li><a href='/maryland/bowie/' onclick="localStorage.setItem('city', 'Bowie')">Bowie</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

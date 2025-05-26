@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Georgia</h1>
-    <ul>
+    <h1>Loans in Georgia</h1>
+    <ul class="citylist">
       <li><a href='/georgia/atlanta/' onclick="localStorage.setItem('city', 'Atlanta')">Atlanta</a></li>
 <li><a href='/georgia/columbus/' onclick="localStorage.setItem('city', 'Columbus')">Columbus</a></li>
 <li><a href='/georgia/augusta/' onclick="localStorage.setItem('city', 'Augusta')">Augusta</a></li>
 <li><a href='/georgia/savannah/' onclick="localStorage.setItem('city', 'Savannah')">Savannah</a></li>
 <li><a href='/georgia/athens/' onclick="localStorage.setItem('city', 'Athens')">Athens</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

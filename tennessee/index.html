@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Tennessee</h1>
-    <ul>
+    <h1>Loans in Tennessee</h1>
+    <ul class="citylist">
       <li><a href='/tennessee/memphis/' onclick="localStorage.setItem('city', 'Memphis')">Memphis</a></li>
 <li><a href='/tennessee/nashville/' onclick="localStorage.setItem('city', 'Nashville')">Nashville</a></li>
 <li><a href='/tennessee/knoxville/' onclick="localStorage.setItem('city', 'Knoxville')">Knoxville</a></li>
 <li><a href='/tennessee/chattanooga/' onclick="localStorage.setItem('city', 'Chattanooga')">Chattanooga</a></li>
 <li><a href='/tennessee/clarksville/' onclick="localStorage.setItem('city', 'Clarksville')">Clarksville</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

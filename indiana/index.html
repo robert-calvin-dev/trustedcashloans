@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Indiana</h1>
-    <ul>
+    <h1>Loans in Indiana</h1>
+    <ul class="citylist">
       <li><a href='/indiana/indianapolis/' onclick="localStorage.setItem('city', 'Indianapolis')">Indianapolis</a></li>
 <li><a href='/indiana/fort-wayne/' onclick="localStorage.setItem('city', 'Fort Wayne')">Fort Wayne</a></li>
 <li><a href='/indiana/evansville/' onclick="localStorage.setItem('city', 'Evansville')">Evansville</a></li>
 <li><a href='/indiana/south-bend/' onclick="localStorage.setItem('city', 'South Bend')">South Bend</a></li>
 <li><a href='/indiana/carmel/' onclick="localStorage.setItem('city', 'Carmel')">Carmel</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Minnesota</h1>
-    <ul>
+    <h1>Loans in Minnesota</h1>
+    <ul class="citylist">
       <li><a href='/minnesota/minneapolis/' onclick="localStorage.setItem('city', 'Minneapolis')">Minneapolis</a></li>
 <li><a href='/minnesota/st-paul/' onclick="localStorage.setItem('city', 'St. Paul')">St. Paul</a></li>
 <li><a href='/minnesota/rochester/' onclick="localStorage.setItem('city', 'Rochester')">Rochester</a></li>
 <li><a href='/minnesota/duluth/' onclick="localStorage.setItem('city', 'Duluth')">Duluth</a></li>
 <li><a href='/minnesota/bloomington/' onclick="localStorage.setItem('city', 'Bloomington')">Bloomington</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in North Carolina</h1>
-    <ul>
+    <h1>Loans in North Carolina</h1>
+    <ul class="citylist">
       <li><a href='/north-carolina/charlotte/' onclick="localStorage.setItem('city', 'Charlotte')">Charlotte</a></li>
 <li><a href='/north-carolina/raleigh/' onclick="localStorage.setItem('city', 'Raleigh')">Raleigh</a></li>
 <li><a href='/north-carolina/rgb(4, 0, 128)sboro/' onclick="localStorage.setItem('city', 'rgb(4, 0, 128)sboro')">rgb(4, 0, 128)sboro</a></li>
 <li><a href='/north-carolina/durham/' onclick="localStorage.setItem('city', 'Durham')">Durham</a></li>
 <li><a href='/north-carolina/winston-salem/' onclick="localStorage.setItem('city', 'Winston-Salem')">Winston-Salem</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->

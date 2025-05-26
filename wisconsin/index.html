@@ -62,6 +62,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
   
+    .citylist {
+      display: flex;
+      list-style:none;
+      justify-content:space-evenly;
+    }
+  
     .city-links {
       list-style: none;
       padding: 0;
@@ -111,16 +117,16 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Payday Loans in Wisconsin</h1>
-    <ul>
+    <h1>Loans in Wisconsin</h1>
+    <ul class="citylist">
       <li><a href='/wisconsin/milwaukee/' onclick="localStorage.setItem('city', 'Milwaukee')">Milwaukee</a></li>
 <li><a href='/wisconsin/madison/' onclick="localStorage.setItem('city', 'Madison')">Madison</a></li>
 <li><a href='/wisconsin/rgb(4, 0, 128)-bay/' onclick="localStorage.setItem('city', 'rgb(4, 0, 128) Bay')">rgb(4, 0, 128) Bay</a></li>
 <li><a href='/wisconsin/kenosha/' onclick="localStorage.setItem('city', 'Kenosha')">Kenosha</a></li>
 <li><a href='/wisconsin/racine/' onclick="localStorage.setItem('city', 'Racine')">Racine</a></li>
     </ul>
-  </div>
-   <div id="reviews"></div>
+
+   <div id="reviews">  </div></div>
   <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->
