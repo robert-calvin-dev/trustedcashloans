@@ -56,106 +56,94 @@
 
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-body {
-  
-  color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.message {
- background: #004aad;
-  max-width: 90%;
-  padding: 20px;
-  font-size: 1.4rem;
-  box-sizing: border-box;
-}
-
-.message h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.loader {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #faf200;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-  margin: 30px auto;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@media (max-width: 768px) {
-  .message {
-    font-size: 1.1rem;
-    padding: 15px;
-  }
-
-  .message h1 {
-    font-size: 1.6rem;
-  }
-
-  .loader {
-    width: 50px;
-    height: 50px;
-    border-width: 6px;
-  }
-}
+    .offer-box {
+      background: white;
+      padding: 40px;
+      max-width: 700px;
+      margin: 50px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .offer-box h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .offer-box .button {
+      background: #0074D9;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
- <div id="header"></div>
-  <div class="message" id="message">
-    <h1>🎉 You're Pre-Approved!</h1>
-    <p id="personalMessage"></p>
-    <p>Please check your email for details. <br>A loan specialist will contact you via your preferred method within 24 hours.</p>
-    <div class="loader"></div>
-    <p>Redirecting you to our homepage...</p>
-  </div>
-
-  <div style="display:none;">
-   <h2>Your Loan Application Has Been Received</h2>
-   <p>Thank you for applying with Trusted Cash Loans. We’ve successfully received your application and are already reviewing your information to find a lending partner that fits your needs. Whether you're looking for emergency funds, payday relief, or a personal loan solution, our system is working fast to match you with the best available option.</p>
- 
-   <ul>
-     <li>Loan application confirmation received</li>
-     <li>Payday loan form successfully submitted</li>
-     <li>Next steps after online loan apply</li>
-     <li>What happens after you apply for a loan</li>
-     <li>Trusted loan partner matching in progress</li>
-     <li>Confirmation page for emergency loan request</li>
-     <li>Fast processing after loan application</li>
-     <li>Submitted personal loan application steps</li>
-     <li>Online payday loan confirmation message</li>
-     <li>Loan decision process started after apply</li>
-   </ul>
- </div>
- 
+  <div id="header"></div>
+  <div id="offer-result" class="offer-box"></div>
+  <div id="footer"></div>
 
   <script>
-    const name = localStorage.getItem('loan_first_name') || 'There';
-    const type = localStorage.getItem('loan_type') || 'your loan';
+ function showRecommendedOffer() {
+  const income = parseInt(localStorage.getItem('loan_monthly_income'), 10) || 0;
+  const employment = localStorage.getItem('loan_employment_type') || '';
+  const age = parseInt(localStorage.getItem('loan_age'), 10) || 0;
+  const hasVehicle = localStorage.getItem('loan_vehicle_owner') === 'true';
+  const loanType = localStorage.getItem('loan_type') || '';
+  const state = localStorage.getItem('state') || '';
 
-    document.getElementById('personalMessage').textContent =
-      `Congratulations! We’ve matched you with lenders for ${type === 'payday' ? 'a Payday Loan' : 'a Personal Installment Loan'}.`;
+  let offer = {
+    name: 'Payday SOS',
+    url: 'https://afflat3c2.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=12935&c=918277&a=762172&k=39ABD8CB864C6889B5968632FAE8F935&l=13430'
+  };
 
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 10000); // 10 second redirect
+  if (state === 'NY' || state === 'AR') {
+    offer = {
+      name: 'Explore Credit Loans',
+      url: 'https://afflat3c1.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=25268&c=918277&a=762172&k=508B2AC6EB0F2A09C2C2406813EDC8F8&l=26766'
+    };
+  } else if (loanType === 'credit') {
+    offer = {
+      name: 'Yendo Credit Card',
+      url: 'https://afflat3c2.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=27618&c=918277&a=762172&k=80F08CDE0F2F81B4645B8FA33C3A649F&l=29942'
+    };
+  } else if (income >= 2500 && age >= 25 && age <= 55) {
+    offer = {
+      name: 'Explore Credit Loans',
+      url: 'https://afflat3c1.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=25268&c=918277&a=762172&k=508B2AC6EB0F2A09C2C2406813EDC8F8&l=26766'
+    };
+  } else if ((employment.includes('Full-Time') || employment.includes('Part-Time')) && income >= 1500) {
+    offer = {
+      name: 'HonestLoans',
+      url: 'https://afflat3c1.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=10933&c=918277&a=762172&k=BA0C72F548CC0E1865DAB02BBAD686B8&l=10907'
+    };
+  } else if (["Student", "Self-Employed", "Unemployed"].includes(employment)) {
+    offer = {
+      name: 'TaxExpert',
+      url: 'https://afflat3c2.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=22650&c=918277&a=762172&k=56F8F814545736750673CB9E842849FC&l=23511'
+    };
+  }
+
+  // Save to localStorage for email or future
+  localStorage.setItem('recommended_offer', offer.name);
+  localStorage.setItem('recommended_offer_url', offer.url);
+
+  // Render it
+  const container = document.getElementById('offer-result');
+  container.innerHTML = `
+    <h2>Your Recommended Offer: ${offer.name}</h2>
+    <p>Based on your details, this offer is best suited to you.</p>
+    <a href="${offer.url}" class="button" target="_blank">Apply Now</a>
+
+    Not the right fit? <a href='/more-offers/'>View more lender options here.</a>
+  `;
+}
+
+    document.addEventListener('DOMContentLoaded', showRecommendedOffer);
   </script>
-  <script src="/assets/js/script.js"></script>
 </body>
 </html>
+
