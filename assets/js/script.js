@@ -24,7 +24,7 @@ function insertFooter() {
     <a href="/state-laws/">State Laws</a>
     <a href="/legalstuff/">Legal Stuff</a>
   </nav>
-  <img src="/assets/images/badges.png">
+
 </div>
 <div class="footer-legal">
   <p style="font-size: 0.65rem; color: #999999e0; line-height: 1.5;">
@@ -44,11 +44,28 @@ function insertFooter() {
   document.getElementById('footer').innerHTML = footerHTML;
  })};
 
+ function insertReviews() {
+  const reviewHTML = `
+      <h4 style="text-align:center;">Why Our Customers Love Us</h4>
+
+    <section class="testimonials">
+      <img src="/assets/images/dean-review.png" alt="Dean Testimonial">
+      <img src="/assets/images/reba-review.png" alt="Reba Testimonial">
+      <img src="/assets/images/patrick-review.png" alt="Patrick Testimonial">
+    </section>
+  
+  `;
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('reviews').innerHTML = reviewHTML;
+  })
+ }
+
 
 
 
  insertHeader();
  insertFooter();
+ insertReviews(); 
 
 
 
