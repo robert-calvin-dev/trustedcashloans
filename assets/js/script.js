@@ -12,7 +12,6 @@ function insertFooter() {
 <footer>
   <div class="footer">
   <nav>
-    <a href="/login/">Login</a>
     <a href="/about/">About Trusted Cash Loans</a>
     <a href="/how-it-works/">How It Works</a>
     <a href="/paydayloans/">Trusted Cash Payday Loans</a>
