@@ -122,7 +122,7 @@
   <div class="form-container">
   <h1>Loans in Cleveland, Ohio</h1>
 
- <form onsubmit="handleFinalFormSubmit(event)">
+<form id="loanForm">
   <label for="firstName">First Name</label>
   <input id="firstName" name="firstName" placeholder="First Name" required>
 
@@ -212,5 +212,33 @@
   Cleveland payday loans, best loans in Cleveland, fast cash in Cleveland, online loan help Ohio, Ohio emergency loan options, how to get approved in Cleveland, Cleveland bad credit loans, no credit check Cleveland loan, personal loans in Cleveland, Ohio cash advance options
 </div>
   <script src="/assets/js/script.js"></script>
+<script>
+  document.getElementById('loanForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    // Calculate and append age
+    const birthdate = new Date(formData.get("birthdate"));
+    const age = new Date().getFullYear() - birthdate.getFullYear();
+    formData.append("age", age);
+
+    // Post to your Make webhook
+    try {
+      await fetch("https://hook.us2.make.com/jxvyuoyxqxsyg6bbo02ef3xx1w1vmunw", {
+        method: "POST",
+        body: formData
+      });
+
+      // Optionally redirect to offers page
+      window.location.href = "/offers/";
+    } catch (err) {
+      console.error("Webhook submission failed:", err);
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
+
 </body>
 </html>

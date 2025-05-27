@@ -122,7 +122,7 @@
   <div class="form-container">
   <h1>Loans in Wilmington, Delaware</h1>
 
- <form onsubmit="handleFinalFormSubmit(event)">
+<form id="loanForm">
   <label for="firstName">First Name</label>
   <input id="firstName" name="firstName" placeholder="First Name" required>
 
@@ -212,5 +212,33 @@
   Wilmington payday loans, best loans in Wilmington, fast cash in Wilmington, online loan help Delaware, Delaware emergency loan options, how to get approved in Wilmington, Wilmington bad credit loans, no credit check Wilmington loan, personal loans in Wilmington, Delaware cash advance options
 </div>
   <script src="/assets/js/script.js"></script>
+<script>
+  document.getElementById('loanForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    // Calculate and append age
+    const birthdate = new Date(formData.get("birthdate"));
+    const age = new Date().getFullYear() - birthdate.getFullYear();
+    formData.append("age", age);
+
+    // Post to your Make webhook
+    try {
+      await fetch("https://hook.us2.make.com/jxvyuoyxqxsyg6bbo02ef3xx1w1vmunw", {
+        method: "POST",
+        body: formData
+      });
+
+      // Optionally redirect to offers page
+      window.location.href = "/offers/";
+    } catch (err) {
+      console.error("Webhook submission failed:", err);
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
+
 </body>
 </html>
