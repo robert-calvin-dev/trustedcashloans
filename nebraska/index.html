@@ -39,66 +39,45 @@
   </script>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #e6eff7;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5faff;
       color: #222;
       margin: 0;
       padding: 0;
     }
-  
+
     h1 {
-      font-size: 32px;
       text-align: center;
-      margin-top: 40px;
-      color: #003366;
+      font-size: 28px;
+      color: #0f0066;
+      padding: 40px 20px 20px;
     }
-  
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px;
-      background: #f5faff;
-      border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-  
-    .citylist {
-      display: flex;
-      list-style:none;
-      justify-content:space-evenly;
-    }
-  
-    .city-links {
+
+    ul {
       list-style: none;
       padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 16px;
-      margin-top: 30px;
     }
-  
-    .city-links li {
-      background-color: #ffffff;
+
+    li {
+      background: #fff;
       padding: 16px;
       text-align: center;
       border-radius: 6px;
-      border: 1px solid #d0e4f1;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     }
-  
-    .city-links li:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-  
-    .city-links a {
-      color: #0056a3;
-      font-weight: bold;
+
+    a {
       text-decoration: none;
+      color: #0f0066;
+      font-weight: 600;
     }
-  
-    .city-links a:hover {
+
+    a:hover {
       text-decoration: underline;
     }
   </style>
@@ -125,6 +104,22 @@
 <li><a href='/nebraska/grand-island/' onclick="localStorage.setItem('city', 'Grand Island')">Grand Island</a></li>
 <li><a href='/nebraska/kearney/' onclick="localStorage.setItem('city', 'Kearney')">Kearney</a></li>
     </ul>
+
+    <div class="offer-card" style="max-width: 600px; margin: 40px auto; padding: 25px; background: #fff3e0; border: 1px solid #ffa726; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: sans-serif;">
+      <h2 style="color: #e65100; font-size: 22px;">💳 Need Credit? Use Your Car</h2>
+      <p style="font-size: 16px; color: #444;">Get up to <strong>$10,000 in credit</strong> with a secured card backed by your vehicle. No hard credit check for pre-approval. Yendo helps you build credit with responsible use — no payday traps.</p>
+      <ul style="color: #333; margin: 10px 0 20px 0; padding-left: 20px;">
+        <li>✔ Up to $10,000 in available credit</li>
+        <li>✔ No hard inquiry for pre-approval</li>
+        <li>✔ Credit-building alternative to payday loans</li>
+      </ul>
+      <a href="https://afflat3c2.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=27618&c=918277&a=762172&k=ABF51EEE64A8E645BF91ADB4AAEFBD73&l=29942"
+         target="_blank"
+         style="display: inline-block; padding: 14px 20px; background-color: #fb8c00; color: #fff; font-weight: bold; text-decoration: none; border-radius: 6px;">
+        Apply Now & Check Eligibility
+      </a>
+      <p style="font-size: 12px; color: #666; margin-top: 10px;">*We may earn a commission if you apply through this link. Approval required. Only available in select U.S. states.</p>
+    </div>
 
    <div id="reviews">  </div></div>
   <div id="footer"></div>
