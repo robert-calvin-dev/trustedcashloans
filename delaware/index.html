@@ -58,7 +58,8 @@
       padding: 0;
       max-width: 700px;
       margin: 0 auto;
-      display: grid;
+      display: flex;
+flex-direction: column;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 16px;
     }
@@ -96,8 +97,55 @@
 <body>
   <div id="header"></div>
   <div style="background-color: lightsteelblue; padding: 50px;">
-    <h1>Loans in Delaware</h1>
-    <ul class="citylist">
+    <h1>Initial Loan & Finance Offers</h1>
+    <div style="display: flex; flex-direction:column;" class="initial">
+    
+        <div class="offer-card" style="max-width: 600px; margin: 40px auto; padding: 25px; background: #ffffff; border: 1px solid #3f26ff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: sans-serif;">
+          <imr src="/assets/images/yendo.gif"></imr>
+          <h2 style="color: #6400e6; font-size: 22px;">💳 Need Credit? Use Your Car</h2>
+          <p style="font-size: 16px; color: #444;">Get up to <strong>$10,000 in credit</strong> with a secured card backed by your vehicle. No hard credit check for pre-approval. Yendo helps you build credit with responsible use — no payday traps.</p>
+          <ul style=" display:flex; flex-direction: column; text-align: left; color: #333; margin: 10px 0 20px 0; padding-left: 20px;">
+            <li style="text-align: left;">✔ Up to $10,000 in available credit</li>
+            <li style="text-align: left;">✔ No hard inquiry for pre-approval</li>
+            <li style="text-align: left;">✔ Credit-building alternative to payday loans</li>
+          </ul>
+          <a href="https://afflat3c2.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=27618&c=918277&a=762172&k=ABF51EEE64A8E645BF91ADB4AAEFBD73&l=29942"
+             target="_blank"
+             style="display: inline-block; padding: 14px 20px; background-color: #05b76a; color: #fff; font-weight: bold; text-decoration: none; border-radius: 6px;">
+            Apply Now & Check Eligibility
+          </a>
+          <p style="font-size: 12px; color: #666; margin-top: 10px;">*We may earn a commission if you apply through this link. Approval required. Only available in select U.S. states.</p>
+        </div>
+
+      <a style="margin:auto;" href='https://afflat3c2.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=22956&c=161361&a=762172&k=50D292C274100A3726E44280FC87E49F&l=27880'><IMG SRC='https://maxbounty.com/resources/getimage.asp?a=762172&m=11887&o=22956&i=161361.dat' width=500 height=400 border=0> </a>
+
+    
+        <div class="offer-card" style="max-width: 600px; margin: 40px auto; padding: 25px; background: #ffffff; border: 1px solid #26ff26; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: sans-serif;">
+          <img style="width: 100%;" src="/assets/images/legalharbor.gif">
+          <h2 style="color: #000000; font-size: 22px;">Have you been denied a mortgage or auto loan?</h2>
+          <p style="font-size: 16px; color: #006d0d;">Legal Harbor helps <strong>analyze credit reports, identify inaccuracies,</strong> and works on your behalf to challenge errors with credit bureaus and creditors and start repairing credit.</p>
+          <ul style=" display:flex; flex-direction: column; text-align: left; color: #333; margin: 10px 0 20px 0; padding-left: 20px;">
+            <li style="text-align: left;">✔ Free Credit Analysis, Free Consultation, Personalized Plan, Free Credit Score </li>
+            <li style="text-align: left;">✔ Enroll now and get $15 off your enrollment</li>
+            <li style="text-align: left;">✔ Take advantage of our 90 day risk FREE money back guarantee!</li>
+          </ul>
+          <a href="https://afflat3c2.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=26850&c=918277&a=762172&k=6997DE7419354CF3A22027519E1B0663&l=28644"
+          target="_blank"
+          style="display: inline-block; padding: 14px 20px; background-color: #00790e; color: #fff; font-weight: bold; text-decoration: none; border-radius: 6px;">
+          Start Controlling Your Credit Now!
+          </a>
+        </div>
+    
+    
+    
+        </div>
+    
+      
+    
+    
+        <h1>Want More Personlized Offers?</h1>
+        <h4 style="text-align: center;">Please Select Your City</h4>
+        <ul class="citylist">
       <li><a href='/delaware/wilmington/' onclick="localStorage.setItem('city', 'Wilmington')">Wilmington</a></li>
 <li><a href='/delaware/dover/' onclick="localStorage.setItem('city', 'Dover')">Dover</a></li>
 <li><a href='/delaware/newark/' onclick="localStorage.setItem('city', 'Newark')">Newark</a></li>
@@ -105,21 +153,7 @@
 <li><a href='/delaware/smyrna/' onclick="localStorage.setItem('city', 'Smyrna')">Smyrna</a></li>
     </ul>
 
-    <div class="offer-card" style="max-width: 600px; margin: 40px auto; padding: 25px; background: #fff3e0; border: 1px solid #ffa726; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: sans-serif;">
-      <h2 style="color: #e65100; font-size: 22px;">💳 Need Credit? Use Your Car</h2>
-      <p style="font-size: 16px; color: #444;">Get up to <strong>$10,000 in credit</strong> with a secured card backed by your vehicle. No hard credit check for pre-approval. Yendo helps you build credit with responsible use — no payday traps.</p>
-      <ul style="color: #333; margin: 10px 0 20px 0; padding-left: 20px;">
-        <li>✔ Up to $10,000 in available credit</li>
-        <li>✔ No hard inquiry for pre-approval</li>
-        <li>✔ Credit-building alternative to payday loans</li>
-      </ul>
-      <a href="https://afflat3c2.com/trk/lnk/E1498118-45E3-4344-90AB-1A5CF27CB8C9/?o=27618&c=918277&a=762172&k=ABF51EEE64A8E645BF91ADB4AAEFBD73&l=29942"
-         target="_blank"
-         style="display: inline-block; padding: 14px 20px; background-color: #fb8c00; color: #fff; font-weight: bold; text-decoration: none; border-radius: 6px;">
-        Apply Now & Check Eligibility
-      </a>
-      <p style="font-size: 12px; color: #666; margin-top: 10px;">*We may earn a commission if you apply through this link. Approval required. Only available in select U.S. states.</p>
-    </div>
+
 
    <div id="reviews">  </div></div>
   <div id="footer"></div>
