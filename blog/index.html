@@ -51,7 +51,96 @@
 
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f3f6f9;
+      color: #132c4b;
+    }
 
+    header {
+      background: linear-gradient(to right, #0d1a2d, #1a3e5f);
+      padding: 60px 20px 40px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    .blog-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      padding: 60px 20px;
+      margin: 0 auto;
+    }
+
+    .blog-card {
+      display: block;
+      background: white;
+      border-radius: 12px;
+      padding: 0;
+      text-decoration: none;
+      color: #0c3d6b;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: all 0.2s ease-in-out;
+      overflow: hidden;
+    }
+
+    .blog-card:hover {
+      background: #e3f2fd;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .blog-card-title {
+      padding: 20px 25px;
+      font-weight: 600;
+      font-size: 1em;
+    }
+
+    footer {
+      background: #132c4b;
+      color: #cfd8e2;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .blog-list {
+        grid-template-columns: 1fr;
+        padding: 40px 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -63,35 +152,116 @@
   Explore practical, no-fluff financial advice to help you survive today and plan for tomorrow.
   </p>
   
-  <ul style="list-style: none; padding-left: 0; max-width: 800px; margin: 0 auto;">
-   <li><a href="/blog/10-tips-to-improve-credit/">10 Tips to Improve Your Credit</a></li>
-   <li><a href="/blog/best-cryptowallets/">Best Cryptowallets</a></li>
-   <li><a href="/blog/budgetting-101/">Budgeting 101</a></li>
-   <li><a href="/blog/building-your-savings/">Building Your Savings</a></li>
-   <li><a href="/blog/choosing-the-right-bank/">Choosing the Right Bank</a></li>
-   <li><a href="/blog/consumer-proposals/">Consumer Proposals</a></li>
-   <li><a href="/blog/cryptocurrency/">Cryptocurrency</a></li>
-   <li><a href="/blog/do-you-need-a-financial-advisor/">Do You Need a Financial Advisor?</a></li>
-   <li><a href="/blog/everyone-you-know-is-closer-to-being-homeless-than-rich/">Everyone You Know Is Closer to Being Homeless Than Rich</a></li>
-   <li><a href="/blog/finacial-estate-planning/">Financial Estate Planning</a></li>
-   <li><a href="/blog/gig-work-side-hustles-that-don't-suck-2025/">Gig Work Side Hustles That Don’t Suck in 2025</a></li>
-   <li><a href="/blog/history-biggest-finance-scams/">History’s Biggest Finance Scams</a></li>
-   <li><a href="/blog/importance-of-filing-taxes/">Importance of Filing Taxes</a></li>
-   <li><a href="/blog/investing/">Investing</a></li>
-   <li><a href="/blog/negotiating-with-collection-agencies/">Negotiating with Collection Agencies</a></li>
-   <li><a href="/blog/payday-loan-alternatives-that-are-actually-legit/">Payday Loan Alternatives That Are Actually Legit</a></li>
-   <li><a href="/blog/plan-for-retirement/">Plan for Retirement</a></li>
-   <li><a href="/blog/starting-a-small-business/">Starting a Small Business</a></li>
-   <li><a href="/blog/stock-market/">Stock Market</a></li>
-   <li><a href="/blog/the-truth-about-buy-now-pay-later/">The Truth About Buy Now, Pay Later</a></li>
-   <li><a href="/blog/using-chatgpt-to-build-a-financial-plan/">Using ChatGPT to Build a Financial Plan</a></li>
-   <li><a href="/blog/what-happens-in-bankruptcy/">What Happens in Bankruptcy</a></li>
-   <li><a href="/blog/what-your-credit-score-says-about-you/">What Your Credit Score Says About You</a></li>
-   <li><a href="/blog/when-money-problems-become-mental-health-problems/">When Money Problems Become Mental Health Problems</a></li>
-   <li><a href="/blog/when-to-consider-debt-consolidation/">When to Consider Debt Consolidation</a></li>
-   <li><a href="/blog/why-emergency-funds-fail/">Why Emergency Funds Fail</a></li>
-   <li><a href="/blog/why-your-bank-hates-you/">Why Your Bank Hates You</a></li>
- </ul>
+  <section class="blog-list">
+    <a class="blog-card" href="/blog/10-tips-to-improve-credit/">
+      <img src="/assets/images/socialmediaposts/creditcards.png" alt="10 Tips to Improve Your Credit">
+      <div class="blog-card-title">10 Tips to Improve Your Credit</div>
+    </a>
+    <a class="blog-card" href="/blog/best-cryptowallets/">
+      <img src="/assets/images/socialmediaposts/cryptowallet.png" alt="Best Cryptowallets">
+      <div class="blog-card-title">Best Cryptowallets</div>
+    </a>
+    <a class="blog-card" href="/blog/budgetting-101/">
+      <img src="/assets/images/socialmediaposts/countingbills.png" alt="Budgeting 101">
+      <div class="blog-card-title">Budgeting 101</div>
+    </a>
+    <a class="blog-card" href="/blog/building-your-savings/">
+      <img src="/assets/images/socialmediaposts/savingsstacks.png" alt="Building Your Savings">
+      <div class="blog-card-title">Building Your Savings</div>
+    </a>
+    <a class="blog-card" href="/blog/choosing-the-right-bank/">
+      <img src="/assets/images/socialmediaposts/bigbank.png" alt="Choosing the Right Bank">
+      <div class="blog-card-title">Choosing the Right Bank</div>
+    </a>
+    <a class="blog-card" href="/blog/consumer-proposals/">
+      <img src="/assets/images/socialmediaposts/pocketsempty.png" alt="Consumer Proposals">
+      <div class="blog-card-title">Consumer Proposals</div>
+    </a>
+    <a class="blog-card" href="/blog/cryptocurrency/">
+      <img src="/assets/images/socialmediaposts/crypto.png" alt="Cryptocurrency">
+      <div class="blog-card-title">Cryptocurrency</div>
+    </a>
+    <a class="blog-card" href="/blog/do-you-need-a-financial-advisor/">
+      <img src="/assets/images/socialmediaposts/advising.png" alt="Do You Need a Financial Advisor?">
+      <div class="blog-card-title">Do You Need a Financial Advisor?</div>
+    </a>
+    <a class="blog-card" href="/blog/everyone-you-know-is-closer-to-being-homeless-than-rich/">
+      <img src="/assets/images/socialmediaposts/homeless.png" alt="Everyone You Know Is Closer to Being Homeless Than Rich">
+      <div class="blog-card-title">Everyone You Know Is Closer to Being Homeless Than Rich</div>
+    </a>
+    <a class="blog-card" href="/blog/finacial-estate-planning/">
+      <img src="/assets/images/socialmediaposts/retirement.png" alt="Financial Estate Planning">
+      <div class="blog-card-title">Financial Estate Planning</div>
+    </a>
+    <a class="blog-card" href="/blog/gig-work-side-hustles-that-don't-suck-2025/">
+      <img src="/assets/images/socialmediaposts/getting paid.png" alt="Gig Work Side Hustles That Don’t Suck in 2025">
+      <div class="blog-card-title">Gig Work Side Hustles That Don’t Suck in 2025</div>
+    </a>
+    <a class="blog-card" href="/blog/history-biggest-finance-scams/">
+      <img src="/assets/images/socialmediaposts/scams.png" alt="History’s Biggest Finance Scams">
+      <div class="blog-card-title">History’s Biggest Finance Scams</div>
+    </a>
+    <a class="blog-card" href="/blog/importance-of-filing-taxes/">
+      <img src="/assets/images/socialmediaposts/taxwater.png" alt="Importance of Filing Taxes">
+      <div class="blog-card-title">Importance of Filing Taxes</div>
+    </a>
+    <a class="blog-card" href="/blog/investing/">
+      <img src="/assets/images/socialmediaposts/growingcoin.png" alt="Investing">
+      <div class="blog-card-title">Investing</div>
+    </a>
+    <a class="blog-card" href="/blog/negotiating-with-collection-agencies/">
+      <img src="/assets/images/socialmediaposts/negotiating.png" alt="Negotiating with Collection Agencies">
+      <div class="blog-card-title">Negotiating with Collection Agencies</div>
+    </a>
+    <a class="blog-card" href="/blog/payday-loan-alternatives-that-are-actually-legit/">
+      <img src="/assets/images/socialmediaposts/neonloans.png" alt="Payday Loan Alternatives That Are Actually Legit">
+      <div class="blog-card-title">Payday Loan Alternatives That Are Actually Legit</div>
+    </a>
+    <a class="blog-card" href="/blog/plan-for-retirement/">
+      <img src="/assets/images/socialmediaposts/estates.png" alt="Plan for Retirement">
+      <div class="blog-card-title">Plan for Retirement</div>
+    </a>
+    <a class="blog-card" href="/blog/starting-a-small-business/">
+      <img src="/assets/images/socialmediaposts/smallbiz.png" alt="Starting a Small Business">
+      <div class="blog-card-title">Starting a Small Business</div>
+    </a>
+    <a class="blog-card" href="/blog/stock-market/">
+      <img src="/assets/images/socialmediaposts/stockcrash.png" alt="Stock Market">
+      <div class="blog-card-title">Stock Market</div>
+    </a>
+    <a class="blog-card" href="/blog/the-truth-about-buy-now-pay-later/">
+      <img src="/assets/images/socialmediaposts/boxtrap.png" alt="The Truth About Buy Now, Pay Later">
+      <div class="blog-card-title">The Truth About Buy Now, Pay Later</div>
+    </a>
+    <a class="blog-card" href="/blog/using-chatgpt-to-build-a-financial-plan/">
+      <img src="/assets/images/socialmediaposts/chatgptcash.png" alt="Using ChatGPT to Build a Financial Plan">
+      <div class="blog-card-title">Using ChatGPT to Build a Financial Plan</div>
+    </a>
+    <a class="blog-card" href="/blog/what-happens-in-bankruptcy/">
+      <img src="/assets/images/socialmediaposts/bankrupt.png" alt="What Happens in Bankruptcy">
+      <div class="blog-card-title">What Happens in Bankruptcy</div>
+    </a>
+    <a class="blog-card" href="/blog/what-your-credit-score-says-about-you/">
+      <img src="/assets/images/socialmediaposts/creditscore.png" alt="What Your Credit Score Says About You">
+      <div class="blog-card-title">What Your Credit Score Says About You</div>
+    </a>
+    <a class="blog-card" href="/blog/when-money-problems-become-mental-health-problems/">
+      <img src="/assets/images/socialmediaposts/sleepless.png" alt="When Money Problems Become Mental Health Problems">
+      <div class="blog-card-title">When Money Problems Become Mental Health Problems</div>
+    </a>
+    <a class="blog-card" href="/blog/when-to-consider-debt-consolidation/">
+      <img src="/assets/images/socialmediaposts/arguement.png" alt="When to Consider Debt Consolidation">
+      <div class="blog-card-title">When to Consider Debt Consolidation</div>
+    </a>
+    <a class="blog-card" href="/blog/why-emergency-funds-fail/">
+      <img src="/assets/images/socialmediaposts/emergencyfail.png" alt="Why Emergency Funds Fail">
+      <div class="blog-card-title">Why Emergency Funds Fail</div>
+    </a>
+    <a class="blog-card" href="/blog/why-your-bank-hates-you/">
+      <img src="/assets/images/socialmediaposts/bankkey.png" alt="Why Your Bank Hates You">
+      <div class="blog-card-title">Why Your Bank Hates You</div>
+    </a>
+  </section>
   
 
 
