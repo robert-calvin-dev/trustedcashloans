@@ -1,12 +1,46 @@
 function insertHeader() {
- const headerHTML = `
-   <div class="header2">
-    <a style="margin: auto;" href="https://trustedcashloans.com"><img style="padding: 20px; " src="/assets/images/header-logo-tagline.png" alt="Trusted Cash Loans Logo and Tagline" class="logo-tagline2"></a>
+  const headerHTML = `
+<section class="header-wrapper" style="display: flex; justify-content: space-between; align-items: center; padding: 40px 60px; background: white;">
+  <div class="logo-tagline">
+    <a href="https://trustedcashloans.com">
+      <img src="/assets/images/header-logo-tagline.png" alt="Trusted Cash Loans Logo and Tagline" style="height: 160px;">
+    </a>
   </div>
- `;
- document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('header').innerHTML = headerHTML;
- })};
+  <div class="newsletter-form" style="display: flex; flex-direction: column; align-items: flex-end; max-width: 480px;">
+    <h3 style="margin: 0; text-align: center; font-size: 1.3em; color: #0c3d6b;">Stay Informed</h3>
+    <p style="margin: 5px 0 15px; font-size: 1em; color: #5a6b7b;">Get survival finance tips straight to your inbox.</p>
+    <form id="newsletterForm">    
+      <input type="email" name="email" placeholder="Enter your email" required style="padding: 10px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em;">
+      <button type="submit" style="background-color:rgba(2, 136, 0, 0.76); color: white; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; font-size: 1em; cursor: pointer;">Subscribe</button>
+    </form>
+  </div>
+</section>
+`;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('header').innerHTML = headerHTML;
+
+    const form = document.getElementById('newsletterForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = form.email.value;
+
+      fetch('https://hook.us2.make.com/p283ffvlmlywyapwmm6oq3riyulay98b', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
+      .then(() => {
+        alert('Subscribed!');
+        form.reset();
+      })
+      .catch(() => {
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  });
+}
 function insertFooter() {
  const footerHTML = `
 <footer>
