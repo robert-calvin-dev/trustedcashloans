@@ -3,17 +3,18 @@ function insertHeader() {
 <section class="header-wrapper" style="display: flex; justify-content: space-between; align-items: center; padding: 40px 60px; background: white;">
   <div class="logo-tagline">
     <a href="https://trustedcashloans.com">
-      <img src="/assets/images/header-logo-tagline.png" alt="Trusted Cash Loans Logo and Tagline" style="height: 160px;">
+      <img src="/assets/images/header-logo-tagline.png" alt="Trusted Cash Loans Logo and Tagline" style="width: 80%; height: auto;">
     </a>
   </div>
-  <div class="newsletter-form" style="display: flex; flex-direction: column; align-items: flex-end; max-width: 480px;">
-    <h3 style="margin: 0; text-align: center; font-size: 1.3em; color: #0c3d6b;">Stay Informed</h3>
+    <form id="newsletterForm style="display: flex; flex-direction: column; align-items: flex-end;">
+
+     <h3 style="margin: 0; text-align: center; font-size: 1.3em; color: #0c3d6b;">Stay Informed</h3>
     <p style="margin: 5px 0 15px; font-size: 1em; color: #5a6b7b;">Get survival finance tips straight to your inbox.</p>
-    <form id="newsletterForm">    
+
       <input type="email" name="email" placeholder="Enter your email" required style="padding: 10px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em;">
       <button type="submit" style="background-color:rgba(2, 136, 0, 0.76); color: white; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; font-size: 1em; cursor: pointer;">Subscribe</button>
     </form>
-  </div>
+
 </section>
 `;
 
