@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You – Trusted Cash Loans</title>
+  <!-- METADATA -->
+  <meta name="description" content="Thank you for applying with Trusted Cash Loans. We'll match you with the best lenders within 1 business day.">
+  <meta name="keywords" content="loan application submitted, thank you, next steps loan, trusted cash loans followup">
+  <meta name="author" content="Robert Calvin">
+  <meta name="theme-color" content="#132c4b">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://trustedcashloans.com/assets/images/siteicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://trustedcashloans.com/assets/images/siteicon.png">
+  <meta property="og:title" content="Thank You – Trusted Cash Loans">
+  <meta property="og:description" content="Thank you for your application. We'll be in touch shortly.">
+  <meta property="og:url" content="https://trustedcashloans.com/thank-you/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://trustedcashloans.com/assets/images/metalogoedition.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thank You – Trusted Cash Loans">
+  <meta name="twitter:description" content="Your application has been received. Await lender matches via email.">
+  <meta name="twitter:image" content="https://trustedcashloans.com/assets/images/metalogoedition.png">
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .thankyou-wrapper {
+      max-width: 650px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: #ecf4fa;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .thankyou-wrapper h1 {
+      color: #132c4b;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .thankyou-wrapper form input[type="email"] {
+      width: 80%;
+      padding: 12px;
+      margin-top: 20px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      font-size: 1em;
+    }
+    .thankyou-wrapper form button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #132c4b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="thankyou-wrapper">
+    <h1>Thank you for applying with TrustedCashLoans.com</h1>
+    <p>Please enter your email below and you will receive your lender matches within 1 business day.</p>
+    
+    <form id="emailForm" action="https://hook.us2.make.com/p283ffvlmlywyapwmm6oq3riyulay98b" method="POST">
+      <input type="email" name="email" placeholder="Enter your email address" required>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    // Optional: redirect after successful form submission
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form)
+      }).then(() => {
+        alert("Thank you! You'll be redirected shortly.");
+        setTimeout(() => {
+          window.location.href = "https://trustedcashloans.com";
+        }, 2000);
+      }).catch(() => {
+        alert("Submission failed. Please try again.");
+      });
+    });
+  </script>
+</body>
+</html>
