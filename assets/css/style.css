@@ -19,14 +19,14 @@ body {
   flex-direction: column;
   margin: auto;
   font-family: Arial, sans-serif;
-  background: linear-gradient(
+  padding: 50px; background: linear-gradient(
   to bottom,
-  #001f4d,   /* deep navy */
-  #004aad,   /* original royal blue */
-  #3366cc,   /* sapphire */
-  #0094d4,   /* original cyan blue */
-  #6f00ff,   /* punchy violet edge */
-  #004aad    /* loop back to royal blue for balance */
+  #001f4d,  
+  #004aad,  
+  #3366cc,   
+  #0094d4,   
+  #6f00ff, 
+  #004aad    
 );
   color: #003366;
   width: 100%;
@@ -137,6 +137,10 @@ header {
   width: 20%;
 }
 
+.innercontent {
+  background-color: white;
+  padding: 50px;
+}
 
 
 .imgborder {

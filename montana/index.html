@@ -65,7 +65,7 @@ flex-direction: column;
     }
 
     li {
-      background: #fff;
+      background: #0f0066;
       padding: 16px;
       text-align: center;
       border-radius: 6px;
@@ -74,7 +74,7 @@ flex-direction: column;
 
     a {
       text-decoration: none;
-      color: #0f0066;
+      color: #fff;
       font-weight: 600;
     }
 
@@ -96,8 +96,18 @@ flex-direction: column;
 </head>
 <body>
   <div id="header"></div>
-  <div style="background-color: lightsteelblue; padding: 50px;">
+  <div style="  padding: 50px; background: linear-gradient(
+  to bottom,
+  #001f4d,  
+  #004aad,  
+  #3366cc,   
+  #0094d4,   
+  #6f00ff, 
+  #004aad    
+);"> 
+<div class="innercontent">
     <h1>Initial Loan & Finance Offers</h1>
+<h4 style="text-align:center;">Currently None to Display</h4>
     <div style="display: flex; flex-direction:column;" class="initial">
 
 <!---
@@ -140,27 +150,29 @@ flex-direction: column;
     
     
     
-        </div>
+ 
     
       
-    
-    
+  
         --->
+       </div>
 
 <h1>Want More Personlized Offers?</h1>
         <h4 style="text-align: center;">Please Select Your City</h4>
         <ul class="citylist">
-      <li><a href='/montana/billings/' onclick="localStorage.setItem('city', 'Billings')">Billings</a></li>
-<li><a href='/montana/missoula/' onclick="localStorage.setItem('city', 'Missoula')">Missoula</a></li>
-<li><a href='/montana/great-falls/' onclick="localStorage.setItem('city', 'Great Falls')">Great Falls</a></li>
-<li><a href='/montana/bozeman/' onclick="localStorage.setItem('city', 'Bozeman')">Bozeman</a></li>
-<li><a href='/montana/butte/' onclick="localStorage.setItem('city', 'Butte')">Butte</a></li>
+      <li><a href='/montana/billings/' style="color: #fff;" onclick="localStorage.setItem('city', 'Billings')">Billings</a></li>
+<li><a href='/montana/missoula/' style="color: #fff;" onclick="localStorage.setItem('city', 'Missoula')">Missoula</a></li>
+<li><a href='/montana/great-falls/' style="color: #fff;" onclick="localStorage.setItem('city', 'Great Falls')">Great Falls</a></li>
+<li><a href='/montana/bozeman/' style="color: #fff;" onclick="localStorage.setItem('city', 'Bozeman')">Bozeman</a></li>
+<li><a href='/montana/butte/' style="color: #fff;" onclick="localStorage.setItem('city', 'Butte')">Butte</a></li>
     </ul>
 
 
 
-   <div id="reviews">  </div></div>
-  <div id="footer"></div>
+   <br><br>
+
+<div id="reviews">  </div></div>
+  </div> <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->
   <div style="display:none">

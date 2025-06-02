@@ -65,7 +65,7 @@ flex-direction: column;
     }
 
     li {
-      background: #fff;
+      background: #0f0066;
       padding: 16px;
       text-align: center;
       border-radius: 6px;
@@ -74,7 +74,7 @@ flex-direction: column;
 
     a {
       text-decoration: none;
-      color: #0f0066;
+      color: #fff;
       font-weight: 600;
     }
 
@@ -96,8 +96,18 @@ flex-direction: column;
 </head>
 <body>
   <div id="header"></div>
-  <div style="background-color: lightsteelblue; padding: 50px;">
+  <div style="  padding: 50px; background: linear-gradient(
+  to bottom,
+  #001f4d,  
+  #004aad,  
+  #3366cc,   
+  #0094d4,   
+  #6f00ff, 
+  #004aad    
+);"> 
+<div class="innercontent">
     <h1>Initial Loan & Finance Offers</h1>
+<h4 style="text-align:center;">Currently None to Display</h4>
     <div style="display: flex; flex-direction:column;" class="initial">
 
 <!---
@@ -140,26 +150,28 @@ flex-direction: column;
     
     
     
-        </div>
+ 
     
       
-    
-    
+  
         --->
+       </div>
 
 <h1>Want More Personlized Offers?</h1>
         <h4 style="text-align: center;">Please Select Your City</h4>
         <ul class="citylist">
-      <li><a href='/colorado/denver/' onclick="localStorage.setItem('city', 'Denver')">Denver</a></li>
-<li><a href='/colorado/colorado-springs/' onclick="localStorage.setItem('city', 'Colorado Springs')">Colorado Springs</a></li>
-<li><a href='/colorado/aurora/' onclick="localStorage.setItem('city', 'Aurora')">Aurora</a></li>
-<li><a href='/colorado/fort-collins/' onclick="localStorage.setItem('city', 'Fort Collins')">Fort Collins</a></li>
-<li><a href='/colorado/lakewood/' onclick="localStorage.setItem('city', 'Lakewood')">Lakewood</a></li>
+      <li><a href='/colorado/denver/' style="color: #fff;" onclick="localStorage.setItem('city', 'Denver')">Denver</a></li>
+<li><a href='/colorado/colorado-springs/' style="color: #fff;" onclick="localStorage.setItem('city', 'Colorado Springs')">Colorado Springs</a></li>
+<li><a href='/colorado/aurora/' style="color: #fff;" onclick="localStorage.setItem('city', 'Aurora')">Aurora</a></li>
+<li><a href='/colorado/fort-collins/' style="color: #fff;" onclick="localStorage.setItem('city', 'Fort Collins')">Fort Collins</a></li>
+<li><a href='/colorado/lakewood/' style="color: #fff;" onclick="localStorage.setItem('city', 'Lakewood')">Lakewood</a></li>
     </ul>
 
 
-   <div id="reviews">  </div></div>
-  <div id="footer"></div>
+   <br><br>
+
+<div id="reviews">  </div></div>
+  </div> <div id="footer"></div>
 
   <!-- INVISIBLE LONG-TAIL KEYWORDS -->
   <div style="display:none">
