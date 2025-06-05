@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Force trailing slash
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{1,5}$
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ https://trustedcashloans.com/$1/ [R=301,L]
