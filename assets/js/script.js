@@ -11,7 +11,7 @@ function insertHeader() {
      <h3 style="margin: 0; text-align: center; font-size: 1.3em; color: #0c3d6b;">Stay Informed</h3>
     <p style="margin: 5px 0 15px; font-size: 1em; color: #5a6b7b;">Get survival finance tips straight to your inbox.</p>
 
-      <input type="email" name="email" placeholder="Enter your email" required style="padding: 10px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em;">
+      <input type="email" name="email" placeholder="Enter your email"  style="padding: 10px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em;">
       <button type="submit" style="background-color:rgba(2, 136, 0, 0.76); color: white; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; font-size: 1em; cursor: pointer;">Subscribe</button>
     </form>
 
@@ -71,7 +71,7 @@ function insertFooter() {
   <p>This website’s sole purpose is to provide lenders and financial partners with information about prospective borrower inquiries. We may receive compensation from lenders and/or network partners for referrals, lead generation, and aggregation services.</p>
 
   <h2 style="text-align: center; font-size: 16px; margin-top: 20px;">Loan Information & Limitations</h2>
-  <p>Loan approval, funding timelines, maximum loan amounts, and interest rates are determined solely by individual lenders, based on their internal policies and your creditworthiness. Not all lenders offer loans up to $50,000. Loan durations range from 61 days to 72 months. APRs vary by lender and product, ranging from 4.99% to 699%. Additional documentation or faxing may be required in some cases. All loan products are subject to availability and applicable federal, provincial, or state regulations.</p>
+  <p>Loan approval, funding timelines, maximum loan amounts, and interest rates are determined solely by individual lenders, based on their internal policies and your creditworthiness. Not all lenders offer loans up to $50,000. Loan durations range from 61 days to 72 months. APRs vary by lender and product, ranging from 4.99% to 699%. Additional documentation or faxing may be  in some cases. All loan products are subject to availability and applicable federal, provincial, or state regulations.</p>
 
   <p>Each lender has its own terms and renewal policies. You must review your specific loan agreement for full details. Missed or late payments may incur additional fees or trigger collection activity. <strong>Trusted Cash Loans</strong> does not control these fees or the enforcement process.</p>
 
