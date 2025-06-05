@@ -123,88 +123,205 @@
   <h1>Loans in Las Cruces, New Mexico</h1>
 
 <form id="loanForm">
-  <label for="firstName">First Name</label>
-  <input id="firstName" name="firstName" placeholder="First Name" required>
+ <label for="firstName">First Name</label>
+ <input id="firstName" name="firstName" placeholder="First Name" required>
 
-  <label for="lastName">Last Name</label>
-  <input id="lastName" name="lastName" placeholder="Last Name" required>
+ <label for="lastName">Last Name</label>
+ <input id="lastName" name="lastName" placeholder="Last Name" required>
 
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email" placeholder="Email" required>
+ <label for="email">Email</label>
+ <input id="email" name="email" type="email" placeholder="Email" required>
 
-  <label for="phone">Phone Number</label>
-  <input id="phone" name="phone" placeholder="Phone Number" required>
+ <label for="phone">Phone Number</label>
+ <input id="phone" name="phone" placeholder="Phone Number" required>
 
-  <label for="birthdate">Birthdate</label>
-  <input id="birthdate" name="birthdate" type="date" placeholder="Birthdate" required>
+ <label for="birthdate">Birthdate</label>
+ <input id="birthdate" name="birthdate" type="date" placeholder="Birthdate" required>
 
-  <input type="hidden" name="age" id="age">
+ <input type="hidden" name="age" id="age">
 
-  <label for="employmentType">Employment Type</label>
-  <select id="employmentType" name="employmentType" required>
-    <option value="">Employment Type</option>
-    <option>Full-Time</option>
-    <option>Part-Time</option>
-    <option>Self-Employed</option>
-    <option>Unemployed</option>
-  </select>
+ <!-- Loan Type and Loan Amount (moved up) -->
+ <label for="loanType">Loan Type</label>
+ <select id="loanType" name="loanType" required>
+   <option value="">Select Loan Type</option>
+   <option>Payday Loan</option>
+   <option>Personal Loan</option>
+   <option>Emergency Loan</option>
+   <option>Debt Consolidation Loan</option>
+   <option>Low Credit Loan</option>
+   <option>Auto Loan</option>
+   <option>Student Loan</option>
+   <option>Mortgage Loan</option>
+ </select>
 
-  <label for="employer">Employer</label>
-  <input id="employer" name="employer" placeholder="Employer">
+ <label for="loanAmount">Loan Amount Requested</label>
+ <input id="loanAmount" name="loanAmount" placeholder="Loan Amount Requested" required>
 
-  <label for="employerPhone">Employer Phone</label>
-  <input id="employerPhone" name="employerPhone" placeholder="Employer Phone">
+ <!-- Own Vehicle Checkbox -->
+ <label>
+   <input type="checkbox" id="ownVehicle" name="ownVehicle">
+   Do you own a vehicle?
+ </label>
 
-  <label for="income">Monthly Income</label>
-  <input id="income" name="income" placeholder="Monthly Income" required>
+ <label for="employmentType">Employment Type</label>
+ <select id="employmentType" name="employmentType" required>
+   <option value="">Employment Type</option>
+   <option>Full-Time</option>
+   <option>Part-Time</option>
+   <option>Self-Employed</option>
+   <option>Unemployed</option>
+   <option>Student</option>
+ </select>
 
-  <label for="directDeposit">Paid by Direct Deposit?</label>
-  <select id="directDeposit" name="directDeposit" required>
-    <option value="">Paid by Direct Deposit?</option>
-    <option>Yes</option>
-    <option>No</option>
-  </select>
+ <!-- Student Info (shown only if "Student" selected) -->
+ <div id="studentInfoSection" style="display:none;">
+   <label for="university">University / College</label>
+   <input id="university" name="university" placeholder="School Name">
 
-  <label for="checkingAccount">Have a Checkings Account?</label>
-  <select id="checkingAccount" name="checkingAccount" required>
-    <option value="">Checkings Account?</option>
-    <option>Yes</option>
-    <option>No</option>
-  </select>
+   <label for="program">Program of Study</label>
+   <input id="program" name="program" placeholder="Program">
 
-  <label for="paydate">Next Pay Day</label>
-  <input id="paydate" name="paydate" type="date" placeholder="Next Pay Day" required>
+   <label for="gradDate">Expected Graduation Date</label>
+   <input id="gradDate" name="gradDate" type="date">
+ </div>
 
-  <label for="loanAmount">Loan Amount Requested</label>
-  <input id="loanAmount" name="loanAmount" placeholder="Loan Amount Requested" required>
+ <label for="employer">Employer</label>
+ <input id="employer" name="employer" placeholder="Employer">
 
-  <label for="suiteNumber">Suite Number</label>
-  <input id="suiteNumber" name="suiteNumber" placeholder="Suite Number">
+ <label for="employerPhone">Employer Phone</label>
+ <input id="employerPhone" name="employerPhone" placeholder="Employer Phone">
 
-  <label for="streetNumber">Street Number</label>
-  <input id="streetNumber" name="streetNumber" placeholder="Street Number" required>
+ <label for="income">Monthly Income</label>
+ <input id="income" name="income" placeholder="Monthly Income" required>
 
-  <label for="streetName">Street Name</label>
-  <input id="streetName" name="streetName" placeholder="Street Name" required>
+ <!-- Financial Institution -->
+ <label for="bankName">Name of Financial Institution</label>
+ <input id="bankName" name="bankName" placeholder="Bank Name" required>
 
-  <label for="city">City</label>
-  <input id="city" name="city" placeholder="City" required>
+ <label for="directDeposit">Paid by Direct Deposit?</label>
+ <select id="directDeposit" name="directDeposit" required>
+   <option value="">Paid by Direct Deposit?</option>
+   <option>Yes</option>
+   <option>No</option>
+ </select>
 
-  <label for="state">State</label>
-  <input id="state" name="state" placeholder="Please Enter In State Again" required>
+ <label for="checkingAccount">Have a Checkings Account?</label>
+ <select id="checkingAccount" name="checkingAccount" required>
+   <option value="">Checkings Account?</option>
+   <option>Yes</option>
+   <option>No</option>
+ </select>
 
-  <label for="livingSituation">Living Situation</label>
-  <select id="livingSituation" name="livingSituation" required>
-    <option value="">Living Situation</option>
-    <option>Own</option>
-    <option>Rent</option>
-    <option>Live with Family</option>
-  </select>
+ <label for="paydate">Next Pay Day</label>
+ <input id="paydate" name="paydate" type="date" placeholder="Next Pay Day" required>
 
-  <label for="monthlyHousingCost">Monthly Housing Cost</label>
-  <input id="monthlyHousingCost" name="monthlyHousingCost" placeholder="Monthly Housing Cost" required>
+ <label for="suiteNumber">Suite Number</label>
+ <input id="suiteNumber" name="suiteNumber" placeholder="Suite Number">
 
-  <button type="submit">Submit & View Offers</button>
+ <label for="streetNumber">Street Number</label>
+ <input id="streetNumber" name="streetNumber" placeholder="Street Number" required>
+
+ <label for="streetName">Street Name</label>
+ <input id="streetName" name="streetName" placeholder="Street Name" required>
+
+ <label for="city">City</label>
+ <input id="city" name="city" placeholder="City" required>
+
+ <label for="state">State</label>
+ <input id="state" name="state" placeholder="Please Enter In State Again" required>
+
+ <label for="zip">ZIP</label>
+ <input id="zip" name="zip" placeholder="Please enter 'XXXXX' ZIP code" required>
+
+
+  <label for="zip">ZIP</label>
+ <input id="zip" name="zip" placeholder="Please enter 'XXXXX' ZIP code" required>
+
+ <label>
+   <input type="checkbox" id="lessThan12Months" name="lessThan12Months">
+   I have lived at this address for less than 12 months
+ </label>
+
+ <div id="previousAddressSection" style="display:none;">
+   <label for="prevSuiteNumber">Previous Suite Number</label>
+   <input id="prevSuiteNumber" name="prevSuiteNumber" placeholder="Previous Suite Number">
+
+   <label for="prevStreetNumber">Previous Street Number</label>
+   <input id="prevStreetNumber" name="prevStreetNumber" placeholder="Previous Street Number">
+
+   <label for="prevStreetName">Previous Street Name</label>
+   <input id="prevStreetName" name="prevStreetName" placeholder="Previous Street Name">
+
+   <label for="prevCity">Previous City</label>
+   <input id="prevCity" name="prevCity" placeholder="Previous City">
+
+ <label for="prevState">Previous State</label>
+<input id="prevState" name="prevState" placeholder="Previous State" required>
+
+
+
+
+
+   <label for="previouszip">Previous ZIP</label>
+   <input id="previouszip" name="previouszip" placeholder="Please enter 'XXXXX' ZIP code" required>
+
+ </div>
+
+ <label for="livingSituation">Living Situation</label>
+ <select id="livingSituation" name="livingSituation" required>
+   <option value="">Living Situation</option>
+   <option>Own</option>
+   <option>Rent</option>
+   <option>Live with Family</option>
+ </select>
+
+ <label for="monthlyHousingCost">Monthly Housing Cost</label>
+ <input id="monthlyHousingCost" name="monthlyHousingCost" placeholder="Monthly Housing Cost" required>
+
+ <!-- SSN and References -->
+ <label for="ssn">SSN (optional)</label>
+ <input id="ssn" name="ssn" placeholder="XXX-XX-XXXX">
+
+ <label for="ssnConfirm">Confirm SSN</label>
+ <input id="ssnConfirm" name="ssnConfirm" placeholder="Confirm SSN">
+
+ <h4>Personal References</h4>
+
+ <label for="ref1Name">First Reference Name</label>
+ <input id="ref1Name" name="ref1Name" placeholder="First Reference Name">
+
+ <label for="ref1Phone">First Reference Number</label>
+ <input id="ref1Phone" name="ref1Phone" placeholder="First Reference Number">
+
+ <label for="ref1Email">First Reference Email</label>
+ <input id="ref1Email" name="ref1Email" placeholder="First Reference Email">
+
+ <label for="ref1Relation">First Reference Relationship</label>
+ <input id="ref1Relation" name="ref1Relation" placeholder="Relationship">
+
+ <label for="ref2Name">Second Reference Name</label>
+ <input id="ref2Name" name="ref2Name" placeholder="Second Reference Name">
+
+ <label for="ref2Phone">Second Reference Number</label>
+ <input id="ref2Phone" name="ref2Phone" placeholder="Second Reference Number">
+
+ <label for="ref2Email">Second Reference Email</label>
+ <input id="ref2Email" name="ref2Email" placeholder="Second Reference Email">
+
+ <label for="ref2Relation">Second Reference Relationship</label>
+ <input id="ref2Relation" name="ref2Relation" placeholder="Relationship">
+
+<label>
+  <input type="checkbox" name="creditCheckConsent" required>
+  I hereby authorize a credit check to be conducted as part of the application process, subject to the requirements and policies of the selected lender and loan type.
+</label>
+
+<label>
+  <input type="checkbox" name="truthAgreement" required>
+  I certify that all information provided in this application is true, complete, and accurate to the best of my knowledge.
+</label>
+
+ <button type="submit">Submit & View Offers</button>
 </form>
   </div>
   </div> <div id="footer"></div>

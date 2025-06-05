@@ -112,13 +112,22 @@ function insertFooter() {
     document.getElementById('reviews').innerHTML = reviewHTML;
   })
  }
-
-
-
-
  insertHeader();
  insertFooter();
  insertReviews(); 
 
+ document.getElementById("lessThan12Months").addEventListener("change", function () {
+  const section = document.getElementById("previousAddressSection");
+  section.style.display = this.checked ? "block" : "none";
+});
+document.getElementById("lessThan12Months").addEventListener("change", function () {
+  document.getElementById("previousAddressSection").style.display = this.checked ? "block" : "none";
+});
+
+// Show/hide student info based on employment type
+document.getElementById("employmentType").addEventListener("change", function () {
+  const studentSection = document.getElementById("studentInfoSection");
+  studentSection.style.display = this.value === "Student" ? "block" : "none";
+});
 
 
